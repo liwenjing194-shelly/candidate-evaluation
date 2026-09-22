@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "policy_pack_id": "agentic_commerce_team_lead_investment",
+  "version": "1.0.0",
+  "name": "Agentic Commerce团队负责人投资评估规则包",
+  "status": "approved",
+  "default_for_mock": false,
+  "taxonomy": {
+    "industry": {
+      "code": "business_services",
+      "name": "商业服务",
+      "aliases": ["电子商务", "数字商业", "企业服务", "科技"]
+    },
+    "track": {
+      "code": "agentic_commerce",
+      "name": "Agentic Commerce",
+      "aliases": ["智能体商业", "代理式商业", "AI Agent Commerce", "智能体电商"]
+    }
+  },
+  "definitions": {
+    "industry": "商业服务是为消费者、商户或企业提供交易、运营和效率工具，并通过服务获得收入的行业。",
+    "track": "Agentic Commerce是由AI智能体在用户授权范围内完成商品发现、决策、下单、支付或履约协同的商业赛道。"
+  },
+  "applicability": {
+    "investment_purposes": ["investment_screening"],
+    "candidate_roles": ["团队负责人", "创始人", "CEO"],
+    "project_stages": ["已有团队，准备规模化生产", "已有产品，准备规模化商业化"],
+    "jurisdictions": ["中国大陆"]
+  },
+  "template_file": "../templates/agentic-commerce-team-lead-investment.v1.json",
+  "required_gate_order": [
+    "agent_identity_and_user_authorization",
+    "payment_security_and_transaction_liability",
+    "data_privacy_and_regulatory_compliance",
+    "merchant_platform_and_protocol_dependency",
+    "commercialization_path",
+    "leader_integrity_and_conflict_disclosure"
+  ],
+  "governance_rules": {
+    "weights_total": 100,
+    "score_scale": 5,
+    "two_or_more_failed_gates_block_final_decision": true,
+    "unconfirmed_gate_blocks_recommendation": true,
+    "unconfirmed_is_not_failure": true,
+    "gates_cannot_be_offset_by_score": true,
+    "ai_can_only_recommend_gate_result": true,
+    "manual_gate_change_requires_reason": true,
+    "human_final_decision_required": true
+  },
+  "review": {
+    "approved_by": "投资评估规则负责人",
+    "approved_at": "2026-08-28T00:00:00+08:00",
+    "change_summary": "建立Agentic Commerce跨行业测试规则包，覆盖授权、支付、数据和生态依赖风险"
+  }
+}

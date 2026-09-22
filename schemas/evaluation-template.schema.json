@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://candidate-evaluation.local/schemas/evaluation-template.schema.json",
+  "title": "投资评估模板",
+  "description": "AI 生成并经人工审核后发布的投资评估模板结构。JSON Schema 负责结构校验，跨字段业务约束由 scripts/validate-config.mjs 校验。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "template_id",
+    "version",
+    "name",
+    "status",
+    "scope",
+    "generation",
+    "score_scale",
+    "dimensions",
+    "gates",
+    "decision_rules",
+    "workflow",
+    "sensitive_fields_excluded",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "template_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{2,79}$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "name": { "type": "string", "minLength": 4, "maxLength": 200 },
+    "description": { "type": "string", "maxLength": 2000 },
+    "status": {
+      "type": "string",
+      "enum": ["ai_generated_draft", "under_review", "draft", "published", "retired"]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["industry", "track", "investment_purpose", "project_stage", "candidate_role", "jurisdiction"],
+      "properties": {
+        "industry": { "type": "string", "minLength": 2 },
+        "track": { "type": "string", "minLength": 2 },
+        "industry_definition": { "type": "string", "minLength": 12, "maxLength": 1500 },
+        "track_definition": { "type": "string", "minLength": 12, "maxLength": 1500 },
+        "investment_purpose": { "const": "investment_screening" },
+        "project_stage": { "type": "string", "minLength": 2 },
+        "candidate_role": { "type": "string", "minLength": 2 },
+        "jurisdiction": { "type": "string", "minLength": 2 },
+        "applicability_notes": { "type": "array", "items": { "type": "string", "minLength": 2 } },
+        "non_applicable_scenarios": { "type": "array", "items": { "type": "string", "minLength": 2 } }
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "generated_at", "requires_human_approval"],
+      "properties": {
+        "method": { "enum": ["base_template_plus_ai_adaptation", "human_authored"] },
+        "generated_at": { "type": "string", "format": "date-time" },
+        "model": { "type": ["string", "null"] },
+        "prompt_version": { "type": ["string", "null"] },
+        "policy_pack_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_.-]{2,99}$" },
+        "policy_pack_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "policy_pack_status": { "enum": ["draft", "approved", "retired"] },
+        "policy_pack_match": { "enum": ["exact", "fallback"] },
+        "requires_human_approval": { "const": true },
+        "approved_by": { "type": ["string", "null"] },
+        "approved_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "score_scale": { "const": 5 },
+    "dimensions": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 10,
+      "items": { "$ref": "#/$defs/dimension" }
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 4,
+      "items": { "$ref": "#/$defs/gate" }
+    },
+    "decision_rules": { "$ref": "#/$defs/decisionRules" },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordered_steps", "ai_can_auto_reject", "human_final_decision_required"],
+      "properties": {
+        "ordered_steps": {
+          "type": "array",
+          "minItems": 6,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "ai_can_auto_reject": { "const": false },
+        "human_final_decision_required": { "const": true }
+      }
+    },
+    "sensitive_fields_excluded": {
+      "type": "array",
+      "minItems": 4,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 2 }
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "subIndicator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "question"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]{2,63}$" },
+        "name": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "question": { "type": "string", "minLength": 4, "maxLength": 500 }
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "description"],
+      "properties": {
+        "score": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "description": { "type": "string", "minLength": 8, "maxLength": 1000 }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "name", "weight", "investment_question", "sub_indicators",
+        "required_evidence", "verification_methods", "anchors",
+        "information_statuses", "confidence_levels"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]{2,63}$" },
+        "name": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "weight": { "type": "number", "exclusiveMinimum": 0, "maximum": 100 },
+        "investment_question": { "type": "string", "minLength": 6, "maxLength": 500 },
+        "sub_indicators": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/subIndicator" }
+        },
+        "required_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "verification_methods": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/anchor" }
+        },
+        "information_statuses": {
+          "type": "array",
+          "const": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"]
+        },
+        "confidence_levels": {
+          "type": "array",
+          "const": ["high", "medium", "low"]
+        },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gateCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "criteria"],
+      "properties": {
+        "status": { "enum": ["pass", "fail", "unconfirmed"] },
+        "criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 4 }
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "name", "order", "critical", "question", "criteria",
+        "required_evidence", "verification_methods", "veto_conditions"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]{2,63}$" },
+        "name": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "order": { "type": "integer", "minimum": 1 },
+        "critical": { "const": true },
+        "question": { "type": "string", "minLength": 6, "maxLength": 500 },
+        "criteria": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/gateCriterion" }
+        },
+        "required_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "verification_methods": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "veto_conditions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 4 }
+        },
+        "unconfirmed_action": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["generate_supplement_request", "required_fields"],
+          "properties": {
+            "generate_supplement_request": { "const": true },
+            "required_fields": {
+              "type": "array",
+              "const": ["material", "owner", "due_date", "verification_method", "status"]
+            }
+          }
+        }
+      }
+    },
+    "decisionRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gate_statuses", "two_or_more_failed_gates_block_final_decision",
+        "unconfirmed_gate_blocks_recommendation", "unconfirmed_is_not_failure",
+        "gates_cannot_be_offset_by_score", "ai_can_only_recommend_gate_result",
+        "manual_gate_change_requires_reason", "score_bands"
+      ],
+      "properties": {
+        "gate_statuses": { "const": ["pass", "fail", "unconfirmed"] },
+        "two_or_more_failed_gates_block_final_decision": { "const": true },
+        "unconfirmed_gate_blocks_recommendation": { "const": true },
+        "unconfirmed_allowed_conclusions": { "const": ["needs_more_information", "hold"] },
+        "unconfirmed_is_not_failure": { "const": true },
+        "gates_cannot_be_offset_by_score": { "const": true },
+        "ai_can_only_recommend_gate_result": { "const": true },
+        "manual_gate_change_requires_reason": { "const": true },
+        "veto_issue_action": { "const": "suspend_and_force_human_legal_review" },
+        "score_formula": { "const": "sum((dimension_score / 5) * dimension_weight)" },
+        "score_bands": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["min", "max", "meaning"],
+            "properties": {
+              "min": { "type": "number", "minimum": 0, "maximum": 100 },
+              "max": { "type": "number", "minimum": 0, "maximum": 100 },
+              "meaning": { "type": "string", "minLength": 2 }
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "url", "authority", "checked_at", "use"],
+      "properties": {
+        "title": { "type": "string", "minLength": 2 },
+        "url": { "type": "string", "format": "uri" },
+        "authority": { "type": "string", "minLength": 2 },
+        "checked_at": { "type": "string", "format": "date" },
+        "use": { "type": "string", "minLength": 4 }
+      }
+    }
+  }
+}

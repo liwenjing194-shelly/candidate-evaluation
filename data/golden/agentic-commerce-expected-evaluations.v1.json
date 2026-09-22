@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "agentic_commerce_synthetic_golden_v1",
+  "template_id": "agentic_commerce_team_lead_investment",
+  "template_version": "1.0.0",
+  "source_dataset": "Agentic_Commerce_模拟候选人_seed.json",
+  "candidates": [
+    {
+      "candidate_id": "agentic_commerce_candidate_a",
+      "candidate_name": "沈知行",
+      "expected_gates": [
+        {
+          "gate_id": "agent_identity_and_user_authorization",
+          "expected_status": "pass",
+          "severity": "normal",
+          "veto_triggered": false,
+          "reason": "企业客户具有采购额度、品类、供应商白名单、OAuth范围和升级审批记录，授权边界能够通过订单与审计事件核验。"
+        },
+        {
+          "gate_id": "payment_security_and_transaction_liability",
+          "expected_status": "pass",
+          "severity": "normal",
+          "veto_triggered": false,
+          "reason": "支付使用一次性token或PSP授权接口，具有结算、退款、拒付、异常交易和责任分配材料。"
+        },
+        {
+          "gate_id": "data_privacy_and_regulatory_compliance",
+          "expected_status": "pass",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "已提供DPA、数据保留、访问审计和第三方安全评估，跨境数据路径仍需在正常尽调中抽查。"
+        },
+        {
+          "gate_id": "merchant_platform_and_protocol_dependency",
+          "expected_status": "pass",
+          "severity": "normal",
+          "veto_triggered": false,
+          "reason": "核心商户、PSP、ERP和SDK接入具有合同、接口和对账证据，关键依赖具备明确权限和运营闭环。"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "expected_status": "pass",
+          "severity": "normal",
+          "veto_triggered": false,
+          "reason": "SaaS、交易编排、SDK和增值服务已有正式合同、续约、结算与回款证据，收入路径可以交叉核验。"
+        },
+        {
+          "gate_id": "leader_integrity_and_conflict_disclosure",
+          "expected_status": "pass",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "负责人履历、股权和项目贡献可核验，关联支付服务商及投资人关系已披露并设置独立审批、比价和复核措施。"
+        }
+      ],
+      "failed_gate_count": 0,
+      "unconfirmed_gate_count": 0,
+      "expected_confidence": "high",
+      "expected_risk": "low_to_medium",
+      "scoring": {
+        "allowed": true,
+        "official_result_status": "available",
+        "overall_score_range": { "min": 78, "max": 94 },
+        "dimension_score_ranges": [
+          { "dimension_id": "product_value_and_use_case", "min": 4, "max": 5 },
+          { "dimension_id": "agent_capability_and_reliability", "min": 4, "max": 5 },
+          { "dimension_id": "commerce_integration_and_interoperability", "min": 4, "max": 5 },
+          { "dimension_id": "authorization_security_and_auditability", "min": 4, "max": 5 },
+          { "dimension_id": "commercialization_and_unit_economics", "min": 4, "max": 5 },
+          { "dimension_id": "ecosystem_data_and_defensibility", "min": 3, "max": 4 },
+          { "dimension_id": "team_leadership_and_scaling", "min": 4, "max": 5 }
+        ],
+        "surface_metrics_must_not_override_gates": true
+      },
+      "allowed_conclusions": ["recommend_investment", "hold", "needs_more_information", "not_recommended"],
+      "prohibited_conclusions": ["investment_suspended"],
+      "workflow_action": "continue_to_weighted_scoring_and_normal_human_review",
+      "required_reviews": ["投资评委复核", "支付与安全抽查", "跨境数据路径抽查", "关联交易抽查"],
+      "supplement_requests": []
+    },
+    {
+      "candidate_id": "agentic_commerce_candidate_b",
+      "candidate_name": "顾言",
+      "expected_gates": [
+        {
+          "gate_id": "agent_identity_and_user_authorization",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "约三成核心商户授权仍是邮件或未确认状态，高金额二次确认和下单、改价、退款权限未在所有渠道一致生效。"
+        },
+        {
+          "gate_id": "payment_security_and_transaction_liability",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "只有PSP框架协议和部分结算材料，子商户授权、token边界、拒付、退款及旅行渠道责任仍缺少正式文件。"
+        },
+        {
+          "gate_id": "data_privacy_and_regulatory_compliance",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "隐私政策仍为初稿，主要商户DPA、跨境传输、数据保留和外包团队访问边界尚未完整确认。"
+        },
+        {
+          "gate_id": "merchant_platform_and_protocol_dependency",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "产品依赖外部API、外包团队和多类商户渠道，但授权范围、成果归属、接口稳定性和替代方案材料不完整。"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "已有订单和部分收入，但GMV、分成、广告、实际回款、退款损失和获客成本尚未形成统一可勾稽口径。"
+        },
+        {
+          "gate_id": "leader_integrity_and_conflict_disclosure",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "负责人外部品牌顾问绩效费、供应商推荐排序和核心商户关联股权已部分披露，但缺少完整协议和书面回避记录。"
+        }
+      ],
+      "failed_gate_count": 0,
+      "unconfirmed_gate_count": 6,
+      "expected_confidence": "medium",
+      "expected_risk": "medium",
+      "scoring": {
+        "allowed": true,
+        "official_result_status": "reference_only",
+        "overall_score_range": { "min": 43, "max": 64 },
+        "dimension_score_ranges": [
+          { "dimension_id": "product_value_and_use_case", "min": 3, "max": 4 },
+          { "dimension_id": "agent_capability_and_reliability", "min": 2, "max": 3 },
+          { "dimension_id": "commerce_integration_and_interoperability", "min": 2, "max": 3 },
+          { "dimension_id": "authorization_security_and_auditability", "min": 2, "max": 3 },
+          { "dimension_id": "commercialization_and_unit_economics", "min": 2, "max": 3 },
+          { "dimension_id": "ecosystem_data_and_defensibility", "min": 2, "max": 3 },
+          { "dimension_id": "team_leadership_and_scaling", "min": 2, "max": 3 }
+        ],
+        "surface_metrics_must_not_override_gates": true
+      },
+      "allowed_conclusions": ["needs_more_information", "hold"],
+      "prohibited_conclusions": ["recommend_investment", "not_recommended", "investment_suspended"],
+      "workflow_action": "generate_supplement_requests_and_hold_for_human_review",
+      "required_reviews": ["投资评委复核", "商户授权复核", "支付与拒付责任复核", "数据合规复核", "财务与回款核验", "关联交易复核"],
+      "supplement_requests": [
+        {
+          "gate_id": "agent_identity_and_user_authorization",
+          "material": "完整商户授权矩阵及高金额订单二次确认规则",
+          "owner_role": "候选负责人",
+          "verification_method": "按商户核对下单、支付、改价、退款和取消权限并抽样复现",
+          "status": "pending"
+        },
+        {
+          "gate_id": "payment_security_and_transaction_liability",
+          "material": "PSP子商户授权、token边界、拒付、退款和重复扣款责任文件",
+          "owner_role": "支付与风控负责人",
+          "verification_method": "与PSP合同、结算单、拒付及退款记录交叉核验",
+          "status": "pending"
+        },
+        {
+          "gate_id": "data_privacy_and_regulatory_compliance",
+          "material": "主要商户DPA、跨境数据路径、保留期限和外包访问协议",
+          "owner_role": "数据合规负责人",
+          "verification_method": "建立数据地图并由法律和安全人员复核处理依据与访问权限",
+          "status": "pending"
+        },
+        {
+          "gate_id": "merchant_platform_and_protocol_dependency",
+          "material": "关键商户、外部API和外包团队的合同、授权、成果归属及替代方案",
+          "owner_role": "候选负责人",
+          "verification_method": "审阅合同并测试关键依赖中断和供应商切换方案",
+          "status": "pending"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "material": "最近十二个月按渠道拆分的订单、GMV、分成、广告、回款、退款和拒付数据",
+          "owner_role": "财务负责人",
+          "verification_method": "平台订单、PSP结算、发票、银行流水和成本台账勾稽",
+          "status": "pending"
+        },
+        {
+          "gate_id": "leader_integrity_and_conflict_disclosure",
+          "material": "顾问绩效费、联盟供应商关联关系、推荐排序影响和书面回避记录",
+          "owner_role": "投资经理",
+          "verification_method": "关联方穿透、合同审阅、独立比价和推荐排序抽查",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "candidate_id": "agentic_commerce_candidate_c",
+      "candidate_name": "罗恺",
+      "expected_gates": [
+        {
+          "gate_id": "agent_identity_and_user_authorization",
+          "expected_status": "fail",
+          "severity": "veto",
+          "veto_triggered": true,
+          "reason": "至少十四笔交易超过用户授权额度，跨境、共享账户和代理场景缺少正式授权，部分订单在人工不知情时完成。"
+        },
+        {
+          "gate_id": "payment_security_and_transaction_liability",
+          "expected_status": "fail",
+          "severity": "veto",
+          "veto_triggered": true,
+          "reason": "生产日志暴露可复用长期密钥，多个客户共享主商户密钥，拒付、退款、重复扣款和异常订单责任不完整。"
+        },
+        {
+          "gate_id": "data_privacy_and_regulatory_compliance",
+          "expected_status": "fail",
+          "severity": "veto",
+          "veto_triggered": true,
+          "reason": "手机号、地址、员工采购记录和购买偏好被用于训练或排序但用途同意不完整，并存在过度保留、删除及跨境记录缺口。"
+        },
+        {
+          "gate_id": "merchant_platform_and_protocol_dependency",
+          "expected_status": "fail",
+          "severity": "veto",
+          "veto_triggered": true,
+          "reason": "核心流程依赖共享账户、超范围API、高权限关联支付接口和不统一的外包访问，缺少许可、最小权限和可行替代方案。"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "GMV和表面收入较高，但回款、退款、拒付、事故损失、关联返佣和合规整改成本尚未形成可持续商业口径。"
+        },
+        {
+          "gate_id": "leader_integrity_and_conflict_disclosure",
+          "expected_status": "fail",
+          "severity": "veto",
+          "veto_triggered": true,
+          "reason": "负责人首次未披露其控制的数据服务公司、个人咨询费、关联支付服务商和代持安排，存在重大控制权及利益冲突风险。"
+        }
+      ],
+      "failed_gate_count": 5,
+      "unconfirmed_gate_count": 1,
+      "expected_confidence": "low",
+      "expected_risk": "critical",
+      "scoring": {
+        "allowed": false,
+        "official_result_status": "skipped_due_to_gates",
+        "surface_metrics_must_not_override_gates": true
+      },
+      "allowed_conclusions": ["investment_suspended"],
+      "prohibited_conclusions": ["recommend_investment", "hold", "needs_more_information", "not_recommended"],
+      "workflow_action": "block_final_investment_decision_and_force_human_legal_security_compliance_review",
+      "required_reviews": ["投资负责人复核", "法律专项复核", "支付与安全专项复核", "数据合规专项复核", "实际控制与关联交易专项核查"],
+      "supplement_requests": [
+        {
+          "gate_id": "agent_identity_and_user_authorization",
+          "material": "全部越权订单的逐笔授权、执行、受益、退款和补救记录",
+          "owner_role": "候选负责人",
+          "verification_method": "由投资、法律和安全人员逐笔复原授权链与交易链",
+          "status": "pending"
+        },
+        {
+          "gate_id": "payment_security_and_transaction_liability",
+          "material": "密钥撤销轮换、客户环境隔离、支付责任和历史拒付退款整改材料",
+          "owner_role": "支付与安全负责人",
+          "verification_method": "执行密钥、最小权限、重复扣款和异常交易专项测试",
+          "status": "pending"
+        },
+        {
+          "gate_id": "data_privacy_and_regulatory_compliance",
+          "material": "个人和交易数据盘点、处理依据、删除匿名化、跨境传输及外部访问整改记录",
+          "owner_role": "数据合规负责人",
+          "verification_method": "由法律和安全人员完成数据处理影响评估及样本追踪",
+          "status": "pending"
+        },
+        {
+          "gate_id": "merchant_platform_and_protocol_dependency",
+          "material": "商户代理授权、API权限、外包访问、关联支付接口和替代方案清单",
+          "owner_role": "技术负责人",
+          "verification_method": "核查合同与访问日志并执行关键依赖中断和切换测试",
+          "status": "pending"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "material": "扣除退款、拒付、事故、整改和关联返佣后的收入与单位经济模型",
+          "owner_role": "财务负责人",
+          "verification_method": "订单、PSP、银行流水、损失台账和关联交易逐项勾稽",
+          "status": "pending"
+        },
+        {
+          "gate_id": "leader_integrity_and_conflict_disclosure",
+          "material": "关联公司、代持股权、咨询费、供应商返佣、关联支付服务商合同和资金流",
+          "owner_role": "投资经理",
+          "verification_method": "工商与股权穿透、合同审阅、资金流核验和关键人员访谈",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

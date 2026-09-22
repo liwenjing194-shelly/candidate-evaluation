@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_version": "1.0.0",
+  "industry": {
+    "code": "industry_5e7f544a",
+    "name": "广告"
+  },
+  "track": {
+    "code": "track_5e7f544a81ea52a85316",
+    "name": "广告自动化"
+  },
+  "governance": {
+    "purpose": "仅用于广告自动化投资研究、候选人评估和模板规则论证，不用于自动作出投资或个人权益决定。",
+    "principles": [
+      "仅采集与智能体执行、交易安全、商业化、生态接入和负责人治理直接相关的信息",
+      "事实、负责人归因假设和模板规则分层保存",
+      "每条事实必须保留来源、链接、观察日期、采集方式和复核状态",
+      "不得绕过登录、验证码、付费墙、robots限制、反爬措施或平台权限",
+      "企业自述不得单独形成高置信度成功特质",
+      "模板规则和权重只能由人工确认发布"
+    ],
+    "excluded_fields": [
+      "身份证件号码",
+      "精确住址",
+      "私人联系方式",
+      "家庭成员隐私",
+      "健康与生物识别信息",
+      "与经营评估无关的性别、年龄、婚姻、民族、宗教等信息"
+    ]
+  },
+  "sources": [
+    {
+      "code": "track_5e7f544a81ea52a85316_official_public",
+      "name": "广告自动化官方公开披露",
+      "category": "regulatory_and_company_public",
+      "source_type": "official_public",
+      "url": "https://sec.gov/",
+      "allowed_domains": [
+        "sec.gov",
+        "cninfo.com.cn",
+        "hkexnews.hk"
+      ],
+      "allowed_methods": [
+        "public_page"
+      ],
+      "automation_mode": "public_pages_subject_to_terms",
+      "scope": [
+        "负责人任职",
+        "产品与业务",
+        "商业化",
+        "风险与合规"
+      ],
+      "requirements": [
+        "保留原始链接、发布日期和定位",
+        "不得绕过登录、验证码或访问限制"
+      ],
+      "prohibitions": [
+        "不得将单一公开页面直接转换为高置信度特质"
+      ],
+      "quality_baseline": 0.8
+    },
+    {
+      "code": "track_5e7f544a81ea52a85316_company_official",
+      "name": "广告自动化企业官网与官方发布",
+      "category": "company_first_party_public",
+      "source_type": "public_first_party",
+      "url": "https://sec.gov/",
+      "allowed_domains": [
+        "sec.gov",
+        "cninfo.com.cn",
+        "hkexnews.hk"
+      ],
+      "allowed_methods": [
+        "public_page"
+      ],
+      "automation_mode": "public_pages_subject_to_terms",
+      "scope": [
+        "团队介绍",
+        "产品发布",
+        "合作公告",
+        "负责人公开演讲"
+      ],
+      "requirements": [
+        "标记为企业自述并尽量寻找独立来源交叉验证"
+      ],
+      "prohibitions": [
+        "不得把营销表述直接转换为高置信度特质"
+      ],
+      "quality_baseline": 0.7
+    }
+  ]
+}

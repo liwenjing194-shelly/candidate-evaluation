@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://candidate-evaluation.local/schemas/template-generator-input.schema.json",
+  "title": "投资评估模板生成器输入",
+  "description": "定义从行业、赛道和投资场景生成候选负责人评估模板所需的最小输入。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "industry",
+    "track",
+    "investment_purpose",
+    "project_stage",
+    "candidate_role",
+    "jurisdiction",
+    "language"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{2,63}$"
+    },
+    "industry": {
+      "$ref": "#/$defs/taxonomyTerm"
+    },
+    "track": {
+      "$ref": "#/$defs/taxonomyTerm"
+    },
+    "investment_purpose": {
+      "type": "string",
+      "enum": ["investment_screening"]
+    },
+    "project_stage": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "candidate_role": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "jurisdiction": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "language": {
+      "type": "string",
+      "enum": ["zh-CN"]
+    },
+    "investment_thesis": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "required_gate_topics": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ip_and_copyright",
+          "commercialization_path",
+          "conflict_of_interest",
+          "leader_integrity_and_verifiability"
+        ]
+      },
+      "default": [
+        "ip_and_copyright",
+        "leader_integrity_and_verifiability",
+        "commercialization_path",
+        "conflict_of_interest"
+      ]
+    },
+    "generation_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dimension_count_min": {
+          "type": "integer",
+          "minimum": 4,
+          "maximum": 10,
+          "default": 6
+        },
+        "dimension_count_max": {
+          "type": "integer",
+          "minimum": 4,
+          "maximum": 10,
+          "default": 8
+        },
+        "score_scale": {
+          "const": 5
+        },
+        "require_sources": {
+          "type": "boolean",
+          "default": true
+        },
+        "require_human_approval": {
+          "const": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "taxonomyTerm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "normalized_code": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_.-]{1,63}$"
+        },
+        "aliases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        }
+      }
+    }
+  }
+}

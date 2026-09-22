@@ -1,0 +1,965 @@
+{
+  "schema_version": "1.0",
+  "template_id": "track_667a6167533b7597_team_lead_investment",
+  "version": "1.0.0",
+  "name": "智慧医疗团队负责人投资评估模板",
+  "description": "新增行业向导基于既有模板结构生成的医疗科技/智慧医疗草案，正式使用前必须人工核验行业维度、门槛和权重。",
+  "status": "draft",
+  "scope": {
+    "industry": "医疗科技",
+    "track": "智慧医疗",
+    "investment_purpose": "investment_screening",
+    "project_stage": "已有产品，准备规模化商业化",
+    "candidate_role": "团队负责人",
+    "jurisdiction": "中国大陆",
+    "applicability_notes": [
+      "行业定义：围绕医疗科技相关产品、技术、服务和经营主体的投资研究范围。",
+      "赛道定义：以智慧医疗为核心应用或商业模式的企业与团队，不等同于泛行业概念。",
+      "本模板仅为结构草案，不能替代行业尽调和人工确认"
+    ],
+    "non_applicable_scenarios": [
+      "只提供商品搜索或内容推荐且不执行商业动作的普通AI工具",
+      "没有可运行产品、商户接入或用户测试记录的纯概念项目",
+      "仅评估单个电商项目而不评估团队负责人"
+    ]
+  },
+  "generation": {
+    "method": "base_template_plus_ai_adaptation",
+    "generated_at": "2026-08-30T12:42:47.136Z",
+    "model": "mock-template-provider",
+    "prompt_version": "industry-track-wizard-v1",
+    "requires_human_approval": true,
+    "approved_by": null,
+    "approved_at": null,
+    "policy_pack_id": "track_667a6167533b7597_team_lead_investment",
+    "policy_pack_version": "1.0.0",
+    "policy_pack_status": "approved",
+    "policy_pack_match": "exact"
+  },
+  "score_scale": 5,
+  "dimensions": [
+    {
+      "id": "product_value_and_use_case",
+      "name": "用户需求与产品价值",
+      "weight": 15,
+      "investment_question": "团队是否解决了高频、明确且适合由智能体代理执行的商业任务，并能证明用户愿意授权和持续使用？",
+      "sub_indicators": [
+        {
+          "id": "use_case_necessity",
+          "name": "场景必要性",
+          "question": "智能体是否显著降低用户完成商业任务的时间、成本或决策负担？"
+        },
+        {
+          "id": "user_trust_and_adoption",
+          "name": "用户信任与采用",
+          "question": "用户是否理解授权范围并愿意持续让智能体执行真实商业动作？"
+        },
+        {
+          "id": "outcome_quality",
+          "name": "结果质量",
+          "question": "任务结果是否在价格、匹配度、履约和售后方面优于现有流程？"
+        }
+      ],
+      "required_evidence": [
+        "用户访谈与任务日志",
+        "留存、复购或重复委托数据",
+        "与人工或传统电商流程的对照结果"
+      ],
+      "verification_methods": [
+        "抽样回放端到端任务",
+        "核对产品分析后台与原始日志",
+        "访谈真实用户并验证授权认知"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "主要是概念演示，没有真实用户任务或可核验价值"
+        },
+        {
+          "score": 2,
+          "description": "有少量试用，但需求频率、授权意愿和结果改善缺乏稳定证据"
+        },
+        {
+          "score": 3,
+          "description": "核心场景得到初步验证，部分用户重复使用，价值提升可以核验"
+        },
+        {
+          "score": 4,
+          "description": "高频场景明确，用户持续授权，任务结果和留存数据稳定优于替代方案"
+        },
+        {
+          "score": 5,
+          "description": "形成强用户依赖和清晰品类心智，在多个场景持续产生可量化商业价值"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "notes": []
+    },
+    {
+      "id": "agent_capability_and_reliability",
+      "name": "智能体能力与任务可靠性",
+      "weight": 18,
+      "investment_question": "智能体能否在复杂商业环境中稳定规划、调用工具、处理异常并完成可验收的端到端任务？",
+      "sub_indicators": [
+        {
+          "id": "task_success_rate",
+          "name": "任务成功率",
+          "question": "不同商品、商户和异常情况下的端到端成功率是否稳定？"
+        },
+        {
+          "id": "tool_and_model_resilience",
+          "name": "工具与模型韧性",
+          "question": "模型、浏览器、接口或供应商变化时是否具备降级、切换和恢复能力？"
+        },
+        {
+          "id": "evaluation_and_observability",
+          "name": "评测与可观测性",
+          "question": "团队是否持续评测关键行为并能定位错误、成本和责任链？"
+        }
+      ],
+      "required_evidence": [
+        "分场景任务成功率和失败分类",
+        "线上故障、回滚与人工接管记录",
+        "评测集、监控面板和版本对比报告"
+      ],
+      "verification_methods": [
+        "使用盲测任务复现成功率",
+        "审查失败样本和人工接管闭环",
+        "验证模型或工具替换演练"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "只能完成受控演示，真实任务经常失败且无法定位原因"
+        },
+        {
+          "score": 2,
+          "description": "部分简单任务可用，但复杂场景、异常处理和监控能力明显不足"
+        },
+        {
+          "score": 3,
+          "description": "核心任务成功率达到可运营水平，具备基础评测、监控和人工接管"
+        },
+        {
+          "score": 4,
+          "description": "跨商户和多步骤任务表现稳定，失败可追踪并具备成熟降级机制"
+        },
+        {
+          "score": 5,
+          "description": "形成可复制的高可靠智能体工程体系，持续优化且对外部模型变化具有韧性"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "notes": []
+    },
+    {
+      "id": "commerce_integration_and_interoperability",
+      "name": "商业集成与协议互操作",
+      "weight": 15,
+      "investment_question": "团队是否能以可维护方式连接商户、商品、库存、结算和履约系统，并适应Agentic Commerce协议演进？",
+      "sub_indicators": [
+        {
+          "id": "merchant_coverage",
+          "name": "商户与供给覆盖",
+          "question": "已有商户、商品和服务覆盖是否足以支撑核心使用场景？"
+        },
+        {
+          "id": "protocol_interoperability",
+          "name": "协议互操作",
+          "question": "是否支持API、MCP、A2A、UCP或其他标准化接入方式并降低定制成本？"
+        },
+        {
+          "id": "fulfillment_integration",
+          "name": "交易履约集成",
+          "question": "订单、库存、支付、退款和售后状态能否被一致追踪？"
+        }
+      ],
+      "required_evidence": [
+        "商户与渠道接入清单",
+        "接口架构及协议适配记录",
+        "订单到退款的全链路对账样本"
+      ],
+      "verification_methods": [
+        "抽查真实商户接口和合同",
+        "执行跨商户兼容性测试",
+        "追踪样本订单的履约与售后状态"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "依赖单一网页脚本或手工操作，没有稳定商户和交易接口"
+        },
+        {
+          "score": 2,
+          "description": "完成少量定制接入，但维护成本高且关键交易状态不一致"
+        },
+        {
+          "score": 3,
+          "description": "核心商户和交易流程已接通，具备基础标准接口和对账能力"
+        },
+        {
+          "score": 4,
+          "description": "支持多类商户和协议，接入效率、履约一致性和可维护性得到验证"
+        },
+        {
+          "score": 5,
+          "description": "形成跨平台互操作基础设施或事实标准，供给网络具有明显规模优势"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "notes": []
+    },
+    {
+      "id": "authorization_security_and_auditability",
+      "name": "授权、安全与可审计性",
+      "weight": 17,
+      "investment_question": "系统是否能证明谁授权智能体在何种边界内执行何种交易，并防止越权、重放、提示注入和凭证泄露？",
+      "sub_indicators": [
+        {
+          "id": "authorization_controls",
+          "name": "授权与限额控制",
+          "question": "授权是否绑定用户、商户、金额、有效期和具体动作，并支持撤销与升级确认？"
+        },
+        {
+          "id": "security_controls",
+          "name": "安全控制",
+          "question": "是否具备身份验证、密钥管理、最小权限、异常检测和攻击防护？"
+        },
+        {
+          "id": "audit_and_dispute",
+          "name": "审计与争议处理",
+          "question": "每次决策、调用和交易是否可追溯，并能支持退款、申诉和责任认定？"
+        }
+      ],
+      "required_evidence": [
+        "授权模型、权限矩阵和撤销流程",
+        "安全测试、威胁模型和事件记录",
+        "不可篡改审计日志及争议处理样本"
+      ],
+      "verification_methods": [
+        "执行越权、重放和提示注入测试",
+        "抽查凭证存储与密钥轮换",
+        "从授权记录复原一笔完整交易"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "智能体可在模糊或一次性授权下执行高风险动作，缺少审计和安全边界"
+        },
+        {
+          "score": 2,
+          "description": "存在基础登录和确认，但授权粒度、攻击防护或交易追溯明显不足"
+        },
+        {
+          "score": 3,
+          "description": "核心交易具备明确授权、限额、日志和人工升级机制，主要风险可控"
+        },
+        {
+          "score": 4,
+          "description": "授权可验证且上下文绑定，安全测试充分，争议和异常处理形成闭环"
+        },
+        {
+          "score": 5,
+          "description": "安全与授权能力成为产品基础设施优势，并通过大规模真实交易持续验证"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "notes": []
+    },
+    {
+      "id": "commercialization_and_unit_economics",
+      "name": "商业化与单位经济模型",
+      "weight": 15,
+      "investment_question": "团队是否建立了可持续收入模式，并证明模型推理、获客、支付、客服和履约成本在规模化后可控？",
+      "sub_indicators": [
+        {
+          "id": "revenue_quality",
+          "name": "收入质量",
+          "question": "收入是否来自可重复客户需求，并与团队核心能力直接相关？"
+        },
+        {
+          "id": "unit_economics",
+          "name": "单位经济性",
+          "question": "扣除模型、工具、支付、退款、客服和渠道成本后是否具备合理贡献利润？"
+        },
+        {
+          "id": "growth_efficiency",
+          "name": "增长效率",
+          "question": "增长是否依赖可持续渠道，并能控制补贴、欺诈和售后成本？"
+        }
+      ],
+      "required_evidence": [
+        "收入合同、账单和回款记录",
+        "分客户或分任务单位经济模型",
+        "获客、退款、欺诈、客服和模型成本明细"
+      ],
+      "verification_methods": [
+        "合同与银行流水交叉核验",
+        "重算贡献利润和敏感性情景",
+        "抽查客户续费、流失和退款原因"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "没有真实收入或成本口径，商业模式主要依赖未经验证的假设"
+        },
+        {
+          "score": 2,
+          "description": "有试点收入，但高度定制、补贴驱动或完整成本后明显亏损"
+        },
+        {
+          "score": 3,
+          "description": "核心客户愿意付费，单位经济模型初步成立但规模稳定性仍需验证"
+        },
+        {
+          "score": 4,
+          "description": "收入可重复，贡献利润、回款和增长效率得到多个周期验证"
+        },
+        {
+          "score": 5,
+          "description": "商业模式具有强扩张性和定价权，增长同时改善利润与网络效应"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "notes": []
+    },
+    {
+      "id": "ecosystem_data_and_defensibility",
+      "name": "生态、数据与竞争壁垒",
+      "weight": 10,
+      "investment_question": "团队是否形成合法可持续的数据、商户关系、用户信任或交易网络优势，而不是仅依赖可替换的基础模型？",
+      "sub_indicators": [
+        {
+          "id": "data_feedback_loop",
+          "name": "数据反馈闭环",
+          "question": "任务和交易数据是否在合法边界内持续改善匹配、执行和风控？"
+        },
+        {
+          "id": "ecosystem_position",
+          "name": "生态位置",
+          "question": "团队与商户、支付方、平台和用户之间是否形成难以替代的连接？"
+        },
+        {
+          "id": "switching_cost",
+          "name": "迁移与替代成本",
+          "question": "客户或合作伙伴更换产品时是否会损失流程、数据、集成或信任价值？"
+        }
+      ],
+      "required_evidence": [
+        "数据来源与使用授权清单",
+        "核心合作协议和续约记录",
+        "客户迁移成本与竞争赢单分析"
+      ],
+      "verification_methods": [
+        "核查数据权利和脱敏流程",
+        "访谈商户及生态合作方",
+        "对比主要竞品和基础模型替代情景"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "产品主要封装通用模型，数据和合作关系均可快速复制"
+        },
+        {
+          "score": 2,
+          "description": "积累少量数据或接入，但缺少权利边界、反馈闭环和客户锁定"
+        },
+        {
+          "score": 3,
+          "description": "形成一定专属数据、商户连接或工作流沉淀，具备初步差异化"
+        },
+        {
+          "score": 4,
+          "description": "数据反馈、合作网络和用户信任相互增强，替代成本得到市场验证"
+        },
+        {
+          "score": 5,
+          "description": "建立领先的交易网络或基础设施地位，规模增长持续强化竞争壁垒"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "notes": []
+    },
+    {
+      "id": "team_leadership_and_scaling",
+      "name": "负责人及规模化执行能力",
+      "weight": 10,
+      "investment_question": "负责人是否能够同时管理产品、智能体工程、支付安全、合规和商业生态，并把试点转化为可复制组织能力？",
+      "sub_indicators": [
+        {
+          "id": "cross_functional_leadership",
+          "name": "跨职能领导",
+          "question": "负责人能否协调产品、模型、工程、安全、支付、法务和商业团队？"
+        },
+        {
+          "id": "scaling_plan",
+          "name": "规模化计划",
+          "question": "未来十二至十八个月的产品、团队、资金和风险里程碑是否清晰？"
+        },
+        {
+          "id": "learning_and_governance",
+          "name": "学习与治理",
+          "question": "负责人是否正视失败、建立复盘机制并对高风险自动化保持审慎治理？"
+        }
+      ],
+      "required_evidence": [
+        "核心团队履历与职责矩阵",
+        "产品和商业里程碑复盘",
+        "预算、招聘和风险治理计划"
+      ],
+      "verification_methods": [
+        "关键成员交叉访谈",
+        "核验历史决策与实际结果",
+        "压力测试规模化计划和关键人依赖"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "团队能力单一且高度依赖负责人，缺少安全、支付或商业关键角色"
+        },
+        {
+          "score": 2,
+          "description": "核心成员基本到位，但协作机制、优先级和规模化计划不清晰"
+        },
+        {
+          "score": 3,
+          "description": "负责人具备跨职能协调能力，团队可支撑当前阶段并有明确补强计划"
+        },
+        {
+          "score": 4,
+          "description": "团队结构完整，连续达成关键里程碑并建立风险治理和人才梯队"
+        },
+        {
+          "score": 5,
+          "description": "负责人具备行业定义能力，组织能在快速变化的技术和监管环境中持续扩张"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "notes": []
+    }
+  ],
+  "gates": [
+    {
+      "id": "agent_identity_and_user_authorization",
+      "name": "智能体身份与用户授权",
+      "order": 1,
+      "critical": true,
+      "question": "系统能否验证智能体身份，并证明用户对具体商户、动作、金额和时限作出了有效授权？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "智能体身份可验证并与运营主体绑定",
+            "高风险动作具有明确、可撤销且上下文绑定的用户授权",
+            "授权范围、限额和有效期可被系统强制执行"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "智能体可以在无有效授权或超出授权范围时下单、支付或披露数据",
+            "无法确认执行动作对应的用户、主体或授权记录"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "仅有流程说明但缺少可复现的授权日志和测试证据",
+            "第三方身份或授权组件尚未完成合同和技术核验"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "身份体系和信任模型",
+        "用户授权页面、授权记录及撤销机制",
+        "权限矩阵和越权测试报告"
+      ],
+      "verification_methods": [
+        "复原真实交易的身份与授权链",
+        "执行越权、过期和撤销后的动作测试",
+        "核对第三方身份服务协议"
+      ],
+      "veto_conditions": [
+        "明知缺少用户授权仍允许智能体执行支付或不可逆交易",
+        "伪造、篡改或无法提供关键授权记录"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "payment_security_and_transaction_liability",
+      "name": "支付安全与交易责任",
+      "order": 2,
+      "critical": true,
+      "question": "支付凭证、交易认证、欺诈防控、退款争议和责任分配是否满足真实规模化交易要求？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "支付凭证采用合规机构提供的令牌化或等效保护",
+            "认证、限额、风控、退款和拒付责任具有完整闭环",
+            "团队与支付方及商户的责任边界有合同依据"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "违规存储或传输敏感支付凭证",
+            "重大欺诈、拒付或资金损失风险无责任主体和处置方案"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "支付方案仍处于沙盒或试点，缺少真实交易与风控数据",
+            "支付合作、保险或责任条款尚未最终确认"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "支付架构和数据流",
+        "支付机构合同及资质核验材料",
+        "欺诈、拒付、退款和异常交易数据"
+      ],
+      "verification_methods": [
+        "安全审查支付凭证生命周期",
+        "与支付机构交叉确认合作状态",
+        "抽查异常交易和争议处理记录"
+      ],
+      "veto_conditions": [
+        "存在未经授权扣款、资金挪用或重大支付凭证泄露",
+        "隐瞒重大欺诈、拒付或监管事件"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "data_privacy_and_regulatory_compliance",
+      "name": "数据隐私与监管合规",
+      "order": 3,
+      "critical": true,
+      "question": "个人信息、交易数据、自动化决策和跨境数据处理是否具有合法基础、最小化控制和可执行治理？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "数据收集和处理目的明确、最小必要且具有合法基础",
+            "敏感信息、委托处理、共享和跨境场景已完成识别与控制",
+            "用户可查询、更正、删除、撤回并获得自动化决策相关选择"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "通过未授权方式收集、交易或使用个人与交易数据",
+            "存在重大未整改的数据泄露、监管处罚或系统性合规缺陷"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "缺少完整数据地图、处理协议或影响评估",
+            "新业务地区和自动化决策义务尚未由专业人员确认"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "数据地图和处理活动清单",
+        "隐私政策、同意记录及第三方数据协议",
+        "安全评估、个人信息保护影响评估和事件记录"
+      ],
+      "verification_methods": [
+        "抽样追踪数据从收集到删除的完整流程",
+        "核查用户权利请求是否可执行",
+        "由法律与安全人员复核重点数据场景"
+      ],
+      "veto_conditions": [
+        "非法买卖、抓取或使用个人信息和支付数据",
+        "隐瞒重大数据泄露、处罚或跨境合规风险"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "merchant_platform_and_protocol_dependency",
+      "name": "商户、平台与协议依赖",
+      "order": 4,
+      "critical": true,
+      "question": "产品对关键商户、平台、模型、浏览器自动化和协议的依赖是否获得许可并具有可接受的替代和迁移方案？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "关键平台和商户接入具有明确授权或合同依据",
+            "对模型、支付、协议和渠道依赖有替代方案及切换测试",
+            "核心业务不依赖持续违反第三方条款的技术路径"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "核心交易依赖未经许可的自动化访问或明确违反平台规则",
+            "单一关键依赖中断即可导致业务无法运行且没有可行替代"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "关键合作仍为口头承诺或短期试点",
+            "新协议兼容性、接口稳定性或迁移成本尚未验证"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "关键商户、平台和供应商合同",
+        "依赖清单及业务连续性方案",
+        "协议兼容与供应商切换测试"
+      ],
+      "verification_methods": [
+        "核对合同授权范围和终止条款",
+        "执行关键依赖中断演练",
+        "访谈核心商户和技术合作方"
+      ],
+      "veto_conditions": [
+        "核心业务建立在持续绕过商户安全控制或违反平台条款之上",
+        "隐瞒可导致业务中断的单点依赖或合作终止通知"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "commercialization_path",
+      "name": "商业化路径",
+      "order": 5,
+      "critical": true,
+      "question": "团队是否具有真实、可执行并能覆盖完整交易成本和风险成本的收入路径？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "目标客户、收费对象、定价和销售路径清晰",
+            "存在真实合同、付费试点或可核验交易收入",
+            "收入增长不依赖不可持续补贴或未披露的关联交易"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "核心商业模式在现实合同、平台规则或单位经济性下不可执行",
+            "收入或交易数据存在重大造假、不可归因或循环交易"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "只有合作意向或预测，缺少付费和回款证据",
+            "模型、支付、客服、退款和获客成本尚未完整计入"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "客户合同、订单、发票和回款",
+        "完整单位经济模型",
+        "销售漏斗、续费和退款数据"
+      ],
+      "verification_methods": [
+        "合同、系统订单与流水交叉核验",
+        "客户访谈和回款确认",
+        "重算不同规模情景下的贡献利润"
+      ],
+      "veto_conditions": [
+        "故意伪造收入、订单、客户或交易规模",
+        "主要收入来源违法或明显不可持续"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "leader_integrity_and_conflict_disclosure",
+      "name": "负责人诚信与利益冲突披露",
+      "order": 6,
+      "critical": true,
+      "question": "负责人身份、履历、技术和商业贡献是否可核验，并是否完整披露关联关系、外部业务与潜在利益冲突？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "身份、履历、股权、知识产权和关键经营数据可由独立证据核验",
+            "关联方、代持、外部任职和关联交易已完整披露",
+            "团队建立持续披露和冲突回避机制"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "存在重大履历、产品、客户、收入或技术贡献造假",
+            "故意隐瞒实际控制关系、关联交易、代持或竞争业务"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "关键履历、股权或关联关系缺少独立材料",
+            "历史争议和外部业务的影响尚未完成调查"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "身份、履历和任职证明",
+        "工商、股权、知识产权和关联方清单",
+        "诉讼、处罚、征信和利益冲突声明"
+      ],
+      "verification_methods": [
+        "公开数据库和第三方背景调查",
+        "关键客户、前同事与合作方访谈",
+        "股权穿透和关联交易抽查"
+      ],
+      "veto_conditions": [
+        "重大欺诈、故意造假或隐瞒实际控制关系",
+        "未披露的竞争业务或关联交易足以实质损害被投企业利益"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    }
+  ],
+  "decision_rules": {
+    "gate_statuses": [
+      "pass",
+      "fail",
+      "unconfirmed"
+    ],
+    "two_or_more_failed_gates_block_final_decision": true,
+    "unconfirmed_gate_blocks_recommendation": true,
+    "unconfirmed_allowed_conclusions": [
+      "needs_more_information",
+      "hold"
+    ],
+    "unconfirmed_is_not_failure": true,
+    "gates_cannot_be_offset_by_score": true,
+    "ai_can_only_recommend_gate_result": true,
+    "manual_gate_change_requires_reason": true,
+    "veto_issue_action": "suspend_and_force_human_legal_review",
+    "score_formula": "sum((dimension_score / 5) * dimension_weight)",
+    "score_bands": [
+      {
+        "min": 80,
+        "max": 100,
+        "meaning": "产品、风险控制和商业化能力较强，可在门槛通过后进入推荐投资讨论"
+      },
+      {
+        "min": 65,
+        "max": 79.99,
+        "meaning": "基本具备投资讨论条件，但需要重点核实可靠性或交易风险短板"
+      },
+      {
+        "min": 50,
+        "max": 64.99,
+        "meaning": "产品或商业证据不足，建议补充验证后保留观察"
+      },
+      {
+        "min": 0,
+        "max": 49.99,
+        "meaning": "当前尚不具备规模化投资条件"
+      }
+    ]
+  },
+  "workflow": {
+    "ordered_steps": [
+      "agent_identity_and_user_authorization",
+      "payment_security_and_transaction_liability",
+      "data_privacy_and_regulatory_compliance",
+      "merchant_platform_and_protocol_dependency",
+      "commercialization_path",
+      "leader_integrity_and_conflict_disclosure",
+      "weighted_dimension_scoring",
+      "human_review",
+      "authorized_final_decision"
+    ],
+    "ai_can_auto_reject": false,
+    "human_final_decision_required": true
+  },
+  "sensitive_fields_excluded": [
+    "性别",
+    "年龄",
+    "婚育状态",
+    "民族或种族",
+    "宗教",
+    "健康状况"
+  ],
+  "sources": [
+    {
+      "title": "Trusted Agent Protocol Specifications",
+      "url": "https://developer.visa.com/capabilities/trusted-agent-protocol/trusted-agent-protocol-specifications/",
+      "authority": "Visa",
+      "checked_at": "2026-08-28",
+      "use": "智能体身份、用户授权、交易意图、签名和防重放控制参考"
+    },
+    {
+      "title": "Developer’s Guide to AI Agent Protocols",
+      "url": "https://developers.googleblog.com/en/developers-guide-to-ai-agent-protocols/",
+      "authority": "Google for Developers",
+      "checked_at": "2026-08-28",
+      "use": "AP2授权凭证、消费限额、交易审计和人工升级控制参考"
+    },
+    {
+      "title": "Universal Commerce Protocol",
+      "url": "https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/",
+      "authority": "Google for Developers",
+      "checked_at": "2026-08-28",
+      "use": "商户、支付机构和智能体之间的互操作与协议集成参考"
+    },
+    {
+      "title": "Mastercard Agent Pay",
+      "url": "https://www.mastercard.com/us/en/news-and-trends/press/2025/april/mastercard-unveils-agent-pay-pioneering-agentic-payments-technology-to-power-commerce-in-the-age-of-ai.html",
+      "authority": "Mastercard",
+      "checked_at": "2026-08-28",
+      "use": "智能体支付令牌、消费者认证和交易识别参考"
+    },
+    {
+      "title": "中华人民共和国个人信息保护法",
+      "url": "https://www.cac.gov.cn/2021-08/20/c_1631050028355286.htm",
+      "authority": "中国人大网、国家互联网信息办公室",
+      "checked_at": "2026-08-28",
+      "use": "个人信息处理、敏感个人信息、自动化决策和用户权利参考"
+    },
+    {
+      "title": "中华人民共和国电子商务法",
+      "url": "https://www.samr.gov.cn/wljys/gzzd/art/2023/art_3e75434c954b4cb9bd14867dacff26d1.html",
+      "authority": "全国人大常委会、国家市场监督管理总局",
+      "checked_at": "2026-08-28",
+      "use": "电子商务经营、合同履行、消费者权益和平台责任参考"
+    },
+    {
+      "title": "网络数据安全管理条例",
+      "url": "https://app.www.gov.cn/govdata/gov/202409/30/520076/article.html",
+      "authority": "中华人民共和国国务院",
+      "checked_at": "2026-08-28",
+      "use": "网络数据处理、安全责任、自动化决策和平台数据治理参考"
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0",
+  "template_id": "ai_short_drama_team_lead_investment",
+  "version": "1.0.0",
+  "name": "AI短剧制作团队负责人投资评估模板",
+  "description": "用于投资部门筛选已有团队、准备规模化生产AI短剧的团队负责人。评分衡量投资吸引力，门槛决定是否具备进入投资决策的资格。",
+  "status": "draft",
+  "scope": {
+    "industry": "文化传媒",
+    "track": "AI短剧",
+    "investment_purpose": "investment_screening",
+    "project_stage": "已有团队，准备规模化生产",
+    "candidate_role": "团队负责人",
+    "jurisdiction": "中国大陆",
+    "applicability_notes": [
+      "以团队负责人为主要候选人，团队、作品和商业数据作为负责人能力证据",
+      "适用于已有代表作品并准备扩大产能的AI动画或AI微短剧团队"
+    ],
+    "non_applicable_scenarios": [
+      "只评估单个投资项目而不评估负责人",
+      "尚无作品或团队的纯创意阶段个人",
+      "传统影视团队且未使用生成式AI生产流程"
+    ]
+  },
+  "generation": {
+    "method": "base_template_plus_ai_adaptation",
+    "generated_at": "2026-08-28T00:00:00+08:00",
+    "model": null,
+    "prompt_version": null,
+    "requires_human_approval": true,
+    "approved_by": null,
+    "approved_at": null
+  },
+  "score_scale": 5,
+  "dimensions": [
+    {
+      "id": "content_strategy",
+      "name": "内容策划与短剧判断力",
+      "weight": 15,
+      "investment_question": "负责人是否能持续识别适合短剧表达、平台分发和目标用户的内容机会？",
+      "sub_indicators": [
+        { "id": "topic_selection", "name": "选题与用户理解", "question": "选题是否基于明确用户、平台和需求判断？" },
+        { "id": "storytelling", "name": "短剧叙事能力", "question": "剧本是否具备清晰冲突、节奏、人物和连续观看动力？" },
+        { "id": "content_iteration", "name": "内容复盘与迭代", "question": "是否能根据作品数据和反馈稳定迭代，而非只凭感觉？" }
+      ],
+      "required_evidence": ["代表剧本或分镜", "作品复盘记录", "选题方法或内容开发记录", "用户或平台反馈数据"],
+      "verification_methods": ["作品抽样评审", "负责人访谈", "将复盘结论与上线数据交叉核对"],
+      "anchors": [
+        { "score": 1, "description": "缺少完整作品和内容方法，主要依赖模仿热点或临时创意。" },
+        { "score": 2, "description": "有少量作品经验，能够完成基本内容策划，但用户判断、叙事稳定性和复盘能力较弱。" },
+        { "score": 3, "description": "有多个完整项目，理解短剧基本规律并能依据部分数据迭代，但方法仍依赖负责人个人经验。" },
+        { "score": 4, "description": "多次产出有效作品，有明确选题、剧本评审和数据复盘机制，能够解释成功与失败原因。" },
+        { "score": 5, "description": "形成可复制的内容开发方法，多个题材或平台持续验证，并能培养团队稳定复现内容判断。" }
+      ],
+      "information_statuses": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"],
+      "confidence_levels": ["high", "medium", "low"],
+      "notes": ["作品播放量不能单独证明内容策划能力"]
+    },
+    {
+      "id": "track_record",
+      "name": "过往作品与数据表现",
+      "weight": 20,
+      "investment_question": "负责人是否拥有多个可核验、可归因且具有连续性的作品成果？",
+      "sub_indicators": [
+        { "id": "work_continuity", "name": "作品连续性", "question": "是否存在多个周期或多个作品的连续表现，而非单一爆款？" },
+        { "id": "data_quality", "name": "数据质量", "question": "播放、完播、收入和回款等数据是否有原始证据并且口径一致？" },
+        { "id": "leader_attribution", "name": "负责人贡献归因", "question": "负责人对作品结果的实际贡献是否清晰可核验？" },
+        { "id": "result_efficiency", "name": "结果效率", "question": "作品结果与投入成本、周期和资源是否匹配？" }
+      ],
+      "required_evidence": ["平台后台或结算数据", "发行或客户合同", "银行流水或发票", "作品署名和项目分工记录", "项目成本台账"],
+      "verification_methods": ["抽查平台原始数据", "收入、合同和流水交叉核对", "访谈核心成员或合作方", "按作品核对负责人贡献"],
+      "anchors": [
+        { "score": 1, "description": "没有可核验作品，或核心数据与负责人贡献均无法确认。" },
+        { "score": 2, "description": "有作品和部分传播数据，但证据单一、收入弱或负责人贡献不清。" },
+        { "score": 3, "description": "有多个可验证作品和一定收入，主要数据基本可信，但连续性、归因或成本证据仍有缺口。" },
+        { "score": 4, "description": "多个作品取得稳定结果，播放、收入、回款和负责人贡献具有多来源证据。" },
+        { "score": 5, "description": "跨多个项目或周期持续取得高质量商业结果，数据可审计，且能清楚解释可复制因素与失败边界。" }
+      ],
+      "information_statuses": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"],
+      "confidence_levels": ["high", "medium", "low"],
+      "notes": ["单个爆款和单一平台截图不得直接支持4分或5分"]
+    },
+    {
+      "id": "ai_production_system",
+      "name": "AI工具与生产流程能力",
+      "weight": 20,
+      "investment_question": "团队是否形成可复制、可替换、可追踪并具有质量控制的AI短剧生产系统？",
+      "sub_indicators": [
+        { "id": "workflow_standardization", "name": "流程标准化", "question": "剧本、分镜、生成、配音、剪辑和交付是否有稳定流程？" },
+        { "id": "quality_control", "name": "质量控制", "question": "是否有角色一致性、镜头连续性、内容和版权检查？" },
+        { "id": "tool_resilience", "name": "工具可替换性", "question": "流程是否过度依赖单一模型、个人或供应商？" },
+        { "id": "production_traceability", "name": "生产可追溯性", "question": "是否保留素材来源、生成批次、人工修改和交付版本？" }
+      ],
+      "required_evidence": ["生产流程图或SOP", "模型与工具清单", "项目生成记录", "质量检查记录", "素材和版本追踪记录"],
+      "verification_methods": ["现场流程演示", "抽查一个作品的端到端记录", "访谈技术、制片和视觉负责人", "替换关键工具的压力测试"],
+      "anchors": [
+        { "score": 1, "description": "主要依赖零散工具试验，没有稳定流程、质量控制或完整交付记录。" },
+        { "score": 2, "description": "能完成作品，但流程依赖关键个人或外包，质量、周期和权利记录波动明显。" },
+        { "score": 3, "description": "具备基本标准流程和人工检查，完成过多个项目，但自动化、追溯或工具替换能力仍有限。" },
+        { "score": 4, "description": "流程清晰、质量稳定、记录可追溯，关键工具和岗位有替代方案，成本周期可预测。" },
+        { "score": 5, "description": "形成持续优化的生产系统，具备自动化、量化质检、版本追踪和跨团队复制能力。" }
+      ],
+      "information_statuses": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"],
+      "confidence_levels": ["high", "medium", "low"],
+      "notes": ["工具数量和是否自研模型不直接等于高分"]
+    },
+    {
+      "id": "scalable_delivery",
+      "name": "规模化制作与交付能力",
+      "weight": 15,
+      "investment_question": "在扩大产量后，团队能否维持可接受的质量、周期、成本和交付稳定性？",
+      "sub_indicators": [
+        { "id": "capacity_evidence", "name": "产能证据", "question": "历史产能是否有项目排期和交付记录支持？" },
+        { "id": "bottleneck_management", "name": "瓶颈管理", "question": "是否识别审核、授权、人员和供应商等扩产瓶颈？" },
+        { "id": "delivery_reliability", "name": "交付可靠性", "question": "延期、返工和质量波动是否处于可控范围？" },
+        { "id": "scale_plan", "name": "扩产计划", "question": "扩产目标是否与订单、资金、招聘和质量保障匹配？" }
+      ],
+      "required_evidence": ["历史排期与交付记录", "返工或延期记录", "人员与供应商计划", "扩产预算和产能测算"],
+      "verification_methods": ["项目级产能核验", "复盘延期和返工案例", "对扩产假设进行压力测试"],
+      "anchors": [
+        { "score": 1, "description": "没有稳定交付记录，产能主要是未经验证的口头预测。" },
+        { "score": 2, "description": "能完成单个项目，但延期、返工或外包依赖明显，扩产计划缺少依据。" },
+        { "score": 3, "description": "有基本稳定产能和项目管理，扩产路径初步可行，但关键瓶颈或订单支撑不足。" },
+        { "score": 4, "description": "多个项目按计划交付，产能、质量和成本数据完整，并有明确瓶颈治理方案。" },
+        { "score": 5, "description": "规模化能力经过多个周期验证，可在产量提升时维持质量与经济性，并具备冗余和持续改进机制。" }
+      ],
+      "information_statuses": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"],
+      "confidence_levels": ["high", "medium", "low"]
+    },
+    {
+      "id": "commercialization_and_unit_economics",
+      "name": "商业化与单位经济模型",
+      "weight": 15,
+      "investment_question": "团队是否能将内容能力转化为可持续收入，并证明扩张后的单位经济性？",
+      "sub_indicators": [
+        { "id": "revenue_validation", "name": "收入验证", "question": "收入是否已回款并可与合同、结算单核对？" },
+        { "id": "revenue_diversity", "name": "收入结构", "question": "收入是否过度依赖单一平台、客户或一次性项目？" },
+        { "id": "unit_economics", "name": "单位经济", "question": "单部作品的完整成本、收入、毛利和回本周期是否清晰？" },
+        { "id": "growth_assumptions", "name": "增长假设", "question": "未来收入预测是否由历史转化、订单或明确渠道支持？" }
+      ],
+      "required_evidence": ["合同和订单", "平台结算和银行回款", "项目级成本和收入表", "客户或平台续约记录", "未来收入测算"],
+      "verification_methods": ["合同、结算和流水勾稽", "区分已回款、应收和预测", "分析客户与平台集中度", "复核单位经济模型"],
+      "anchors": [
+        { "score": 1, "description": "没有清晰收入模式或商业假设明显不可行，关键收入数据无法核验。" },
+        { "score": 2, "description": "有收入尝试或预付款，但模式依赖一次性机会，成本、回款和持续性不清。" },
+        { "score": 3, "description": "有可核验收入和基本单位经济模型，但客户集中、回款、利润或增长假设仍有明显不确定性。" },
+        { "score": 4, "description": "多个项目形成可验证回款，单位经济清晰，收入结构和增长计划具有现实依据。" },
+        { "score": 5, "description": "商业模式跨多个周期验证，客户或渠道结构健康，扩张后利润和现金流仍有较强可预测性。" }
+      ],
+      "information_statuses": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"],
+      "confidence_levels": ["high", "medium", "low"]
+    },
+    {
+      "id": "team_and_leadership",
+      "name": "团队配置与负责人能力",
+      "weight": 10,
+      "investment_question": "负责人是否能够组建、领导并稳定一支支撑规模化生产的核心团队？",
+      "sub_indicators": [
+        { "id": "role_coverage", "name": "关键岗位覆盖", "question": "内容、技术、制片、商业和质量岗位是否得到覆盖？" },
+        { "id": "team_stability", "name": "团队稳定性", "question": "核心成员是否稳定投入并具有合理激励？" },
+        { "id": "leadership_evidence", "name": "负责人领导证据", "question": "负责人是否对关键决策、协作和结果承担清晰责任？" },
+        { "id": "organizational_resilience", "name": "组织韧性", "question": "关键岗位是否存在单点依赖，团队能否在人员变化时持续交付？" }
+      ],
+      "required_evidence": ["团队名单和职责", "劳动、合作或股权安排", "项目分工与决策记录", "核心成员访谈"],
+      "verification_methods": ["核心成员交叉访谈", "核对项目职责与署名", "检查全职投入和激励安排", "识别关键岗位单点依赖"],
+      "anchors": [
+        { "score": 1, "description": "团队不稳定或关键岗位严重缺失，负责人实际责任和贡献无法确认。" },
+        { "score": 2, "description": "具备基础成员，但大量依赖兼职或临时外包，分工、激励和决策边界不清。" },
+        { "score": 3, "description": "核心岗位基本覆盖，负责人能够推动项目，但部分关键岗位或组织机制仍不稳定。" },
+        { "score": 4, "description": "核心团队稳定、职责清晰、激励合理，负责人具有多个项目的组织和决策证据。" },
+        { "score": 5, "description": "负责人能够持续吸引和培养人才，组织机制支持多项目并行，并已降低关键人员单点依赖。" }
+      ],
+      "information_statuses": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"],
+      "confidence_levels": ["high", "medium", "low"]
+    },
+    {
+      "id": "capital_efficiency",
+      "name": "资金使用与资源效率",
+      "weight": 5,
+      "investment_question": "负责人是否能将新增投资转化为明确、可衡量并具有阶段性的业务成果？",
+      "sub_indicators": [
+        { "id": "budget_quality", "name": "预算质量", "question": "预算是否完整、合理并与扩产目标对应？" },
+        { "id": "historical_discipline", "name": "历史资金纪律", "question": "历史成本和支出是否可追踪并符合项目目标？" },
+        { "id": "milestone_use", "name": "资金里程碑", "question": "融资用途是否对应明确的产能、收入、团队或权利建设里程碑？" }
+      ],
+      "required_evidence": ["历史支出和成本台账", "融资预算", "资金用途说明", "阶段目标和现金流测算"],
+      "verification_methods": ["历史成本抽查", "预算与扩产计划交叉核对", "对现金流和关键假设进行压力测试"],
+      "anchors": [
+        { "score": 1, "description": "无法说明历史资金使用和未来融资用途，预算与业务目标缺乏关系。" },
+        { "score": 2, "description": "有粗略预算，但缺少项目级台账、现金流测算或明确阶段目标。" },
+        { "score": 3, "description": "资金用途和预算基本合理，历史成本部分可核验，但效率指标和压力测试仍不充分。" },
+        { "score": 4, "description": "成本台账完整，融资用途对应明确里程碑，能够解释投入、产能和收入之间的关系。" },
+        { "score": 5, "description": "历史资金纪律和资源效率持续优秀，预算具备情景分析，新增资金边际回报清晰可追踪。" }
+      ],
+      "information_statuses": ["sufficient", "partially_sufficient", "unconfirmed", "conflicting", "not_applicable"],
+      "confidence_levels": ["high", "medium", "low"]
+    }
+  ],
+  "gates": [
+    {
+      "id": "ip_and_copyright",
+      "name": "IP与版权合规",
+      "order": 1,
+      "critical": true,
+      "question": "团队是否有权使用、商业化和进一步授权其作品、剧本、人物、声音、音乐、素材、模型和AI生成资产？",
+      "criteria": [
+        { "status": "pass", "criteria": ["核心权利链清晰且关键授权文件可核验", "人脸、声音、音乐、素材和模型商用范围基本明确", "上线审核、备案或许可路径明确"] },
+        { "status": "fail", "criteria": ["发现明确无权使用或重大侵权事实", "伪造、篡改或冒用授权文件", "核心IP属于第三方且无法取得投资后所需权利"] },
+        { "status": "unconfirmed", "criteria": ["只有口头说明或授权范围、期限、地域不清", "模型、训练或参考素材的商用条件未核实", "作品权属、署名或二次开发权存在未解决争议"] }
+      ],
+      "required_evidence": ["IP和素材权利清单", "委托创作、劳动或合作协议", "演员、配音、音乐和字体授权", "模型和工具商用条款", "发行、备案或许可材料"],
+      "verification_methods": ["合同和权利链抽查", "作品素材与授权文件交叉核对", "必要时由法律或合规人员复核"],
+      "veto_conditions": ["明确侵犯或无权使用核心IP", "伪造授权文件", "核心作品无法合法商业化或再授权"],
+      "unconfirmed_action": { "generate_supplement_request": true, "required_fields": ["material", "owner", "due_date", "verification_method", "status"] }
+    },
+    {
+      "id": "leader_integrity_and_verifiability",
+      "name": "负责人诚信与可核查性",
+      "order": 2,
+      "critical": true,
+      "question": "负责人身份、履历、作品贡献、股权投入和关键经营数据是否真实并可由独立证据核验？",
+      "criteria": [
+        { "status": "pass", "criteria": ["身份、履历和任职信息可核验", "关键作品和数据至少有两类相互支持的证据", "重大失败、争议和不利事项已主动披露"] },
+        { "status": "fail", "criteria": ["伪造履历、作品、收入或平台数据", "冒用他人项目成果或故意隐瞒重大事实", "实际控制或负责人身份存在重大欺诈"] },
+        { "status": "unconfirmed", "criteria": ["关键经历只有候选人单方面说明", "作品署名、项目合同和团队说法不一致", "股权、代持、收入归属或负责人贡献尚未核清"] }
+      ],
+      "required_evidence": ["身份与任职资料", "项目合同和作品署名", "平台数据、结算和流水", "股权与投入证明", "核心成员或合作方访谈记录"],
+      "verification_methods": ["多来源交叉验证", "抽查原始平台和财务记录", "访谈团队成员、客户或合作方"],
+      "veto_conditions": ["伪造核心作品或经营数据", "冒用他人成果", "重大身份、股权或实际控制欺诈"],
+      "unconfirmed_action": { "generate_supplement_request": true, "required_fields": ["material", "owner", "due_date", "verification_method", "status"] }
+    },
+    {
+      "id": "commercialization_path",
+      "name": "商业化路径",
+      "order": 3,
+      "critical": true,
+      "question": "团队是否具有真实、可执行、可验证并与规模化生产相匹配的收入路径？",
+      "criteria": [
+        { "status": "pass", "criteria": ["收入来源、客户或平台、成本和回本逻辑清晰", "已有合同、订单、结算或回款证据", "扩张假设与历史表现、渠道或锁定订单基本匹配"] },
+        { "status": "fail", "criteria": ["商业模式明显不可行或关键收入被证实虚假", "收入主要依赖违法违规或无法持续的路径", "无法解释成本、资金用途和基本回本逻辑"] },
+        { "status": "unconfirmed", "criteria": ["只有商业计划而无真实交易证据", "只有播放量而缺少收入、回款和成本口径", "未来渠道、海外发行或新业务尚无明确依据"] }
+      ],
+      "required_evidence": ["合同、订单和分成协议", "平台结算与银行回款", "项目级收入成本表", "客户续约或渠道证明", "扩产和回本测算"],
+      "verification_methods": ["合同、结算和流水交叉核验", "区分已回款、应收和预测", "客户或平台访谈", "单位经济和增长假设压力测试"],
+      "veto_conditions": ["核心收入或订单被证实造假", "商业模式主要依赖明确违法违规活动"],
+      "unconfirmed_action": { "generate_supplement_request": true, "required_fields": ["material", "owner", "due_date", "verification_method", "status"] }
+    },
+    {
+      "id": "conflict_of_interest",
+      "name": "利益冲突",
+      "order": 4,
+      "critical": true,
+      "question": "负责人和核心团队是否完整披露关联方、关联交易、代持、外部业务和其他可能影响投资人利益的安排？",
+      "criteria": [
+        { "status": "pass", "criteria": ["股权、实际控制人和关联方已披露", "关联交易有市场定价、回避或独立复核机制", "潜在冲突存在可执行的管理措施"] },
+        { "status": "fail", "criteria": ["存在重大未披露关联交易、利益输送或资金挪用", "实际控制关系或代持被故意隐瞒", "负责人个人利益与被投项目重大冲突且无法隔离"] },
+        { "status": "unconfirmed", "criteria": ["发现潜在关联关系但资料不完整", "关联交易缺少独立比价或审批记录", "外部兼职、顾问关系、代持或收益分配影响尚未查清"] }
+      ],
+      "required_evidence": ["股权和实际控制结构", "关联方清单", "关联交易合同和付款", "比价、审批和回避记录", "负责人外部任职和经济利益披露"],
+      "verification_methods": ["企业和股权信息穿透核验", "合同与资金流向抽查", "关联方访谈", "独立价格比较"],
+      "veto_conditions": ["重大未披露利益输送", "隐瞒实际控制关系", "伪造关联交易或资金记录"],
+      "unconfirmed_action": { "generate_supplement_request": true, "required_fields": ["material", "owner", "due_date", "verification_method", "status"] }
+    }
+  ],
+  "decision_rules": {
+    "gate_statuses": ["pass", "fail", "unconfirmed"],
+    "two_or_more_failed_gates_block_final_decision": true,
+    "unconfirmed_gate_blocks_recommendation": true,
+    "unconfirmed_allowed_conclusions": ["needs_more_information", "hold"],
+    "unconfirmed_is_not_failure": true,
+    "gates_cannot_be_offset_by_score": true,
+    "ai_can_only_recommend_gate_result": true,
+    "manual_gate_change_requires_reason": true,
+    "veto_issue_action": "suspend_and_force_human_legal_review",
+    "score_formula": "sum((dimension_score / 5) * dimension_weight)",
+    "score_bands": [
+      { "min": 80, "max": 100, "meaning": "综合能力较强，可在门槛通过后进入推荐投资讨论" },
+      { "min": 65, "max": 79.99, "meaning": "基本具备条件，但需要重点核实短板" },
+      { "min": 50, "max": 64.99, "meaning": "能力或证据不足，建议保留观察" },
+      { "min": 0, "max": 49.99, "meaning": "暂不具备投资条件" }
+    ]
+  },
+  "workflow": {
+    "ordered_steps": [
+      "ip_and_copyright",
+      "leader_integrity_and_verifiability",
+      "commercialization_path",
+      "conflict_of_interest",
+      "weighted_dimension_scoring",
+      "human_review",
+      "authorized_final_decision"
+    ],
+    "ai_can_auto_reject": false,
+    "human_final_decision_required": true
+  },
+  "sensitive_fields_excluded": ["性别", "年龄", "婚育状态", "民族或种族", "宗教", "健康状况"],
+  "sources": [
+    {
+      "title": "生成式人工智能服务管理暂行办法",
+      "url": "https://www.cac.gov.cn/2023-07/13/c_1690898326795531.htm",
+      "authority": "国家互联网信息办公室等七部门",
+      "checked_at": "2026-08-28",
+      "use": "生成式AI服务、数据、个人权益和内容治理参考"
+    },
+    {
+      "title": "互联网信息服务深度合成管理规定",
+      "url": "https://www.cac.gov.cn/2022-12/11/c_1672221949354811.htm",
+      "authority": "国家互联网信息办公室、工业和信息化部、公安部",
+      "checked_at": "2026-08-28",
+      "use": "深度合成内容标识、生物识别信息同意和技术管理参考"
+    },
+    {
+      "title": "关于进一步加强网络微短剧管理实施创作提升计划有关工作的通知",
+      "url": "https://www.nrta.gov.cn/art/2022/12/27/art_110_63202.html",
+      "authority": "国家广播电视总局",
+      "checked_at": "2026-08-28",
+      "use": "网络微短剧内容审核、备案和制作管理参考"
+    }
+  ]
+}

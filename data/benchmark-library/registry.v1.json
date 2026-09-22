@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "registry_version": "1.0.0",
+  "default_track_code": "ai_short_drama",
+  "governance": {
+    "purpose": "按行业和赛道隔离样本、证据来源与归因方法；样本分析只能生成模板优化建议，不自动修改或发布模板。",
+    "new_track_setup": [
+      "新增独立数据源目录、样本种子和样本方法论文件",
+      "在本注册表登记行业代码、赛道代码和三个文件路径",
+      "先以采集和复核队列运行，再由人工决定是否将建议用于模板修改"
+    ],
+    "sample_approval_feature": false
+  },
+  "libraries": [
+    {
+      "industry_code": "cultural_media",
+      "industry_name": "文化传媒",
+      "track_code": "ai_short_drama",
+      "track_name": "AI短剧",
+      "source_catalog_path": "ai-short-drama-sources.v1.json",
+      "seed_path": "ai-short-drama-samples.seed.v1.json",
+      "methodology_path": "ai-short-drama-benchmark-methodology.v1.json",
+      "collection_targets_path": "collection-targets.v1.json"
+    },
+    {
+      "industry_code": "business_services",
+      "industry_name": "商业服务",
+      "track_code": "agentic_commerce",
+      "track_name": "Agentic Commerce",
+      "source_catalog_path": "agentic-commerce-sources.v1.json",
+      "seed_path": "agentic-commerce-samples.seed.v1.json",
+      "methodology_path": "agentic-commerce-benchmark-methodology.v1.json",
+      "collection_targets_path": "collection-targets.v1.json"
+    },
+    {
+      "industry_code": "industry_533b759779d16280",
+      "industry_name": "医疗科技",
+      "track_code": "track_667a6167533b7597",
+      "track_name": "智慧医疗",
+      "source_catalog_path": "track-667a6167533b7597-sources.v1.json",
+      "seed_path": "track-667a6167533b7597-samples.seed.v1.json",
+      "methodology_path": "track-667a6167533b7597-benchmark-methodology.v1.json",
+      "collection_targets_path": "collection-targets.v1.json"
+    },
+    {
+      "industry_code": "industry_65705b575a314e50",
+      "industry_name": "数字娱乐",
+      "track_code": "track_4e9252a85f716e38",
+      "track_name": "互动影游",
+      "source_catalog_path": "track-4e9252a85f716e38-sources.v1.json",
+      "seed_path": "track-4e9252a85f716e38-samples.seed.v1.json",
+      "methodology_path": "track-4e9252a85f716e38-benchmark-methodology.v1.json",
+      "collection_targets_path": "collection-targets.v1.json"
+    },
+    {
+      "industry_code": "industry_667a6167533b7597",
+      "industry_name": "智慧医疗",
+      "track_code": "track_533b7597566868b0",
+      "track_name": "医疗器械",
+      "source_catalog_path": "track-533b7597566868b0-sources.v1.json",
+      "seed_path": "track-533b7597566868b0-samples.seed.v1.json",
+      "methodology_path": "track-533b7597566868b0-benchmark-methodology.v1.json",
+      "collection_targets_path": "collection-targets.v1.json"
+    },
+    {
+      "industry_code": "industry_5e7f544a",
+      "industry_name": "广告",
+      "track_code": "track_5e7f544a81ea52a85316",
+      "track_name": "广告自动化",
+      "source_catalog_path": "track-5e7f544a81ea52a85316-sources.v1.json",
+      "seed_path": "track-5e7f544a81ea52a85316-samples.seed.v1.json",
+      "methodology_path": "track-5e7f544a81ea52a85316-benchmark-methodology.v1.json",
+      "collection_targets_path": "collection-targets.v1.json"
+    },
+    {
+      "industry_code": "industry_8f6f4ef6",
+      "industry_name": "软件",
+      "track_code": "saas",
+      "track_name": "企业办公软件SaaS",
+      "source_catalog_path": "saas-sources.v1.json",
+      "seed_path": "saas-samples.seed.v1.json",
+      "methodology_path": "saas-benchmark-methodology.v1.json",
+      "collection_targets_path": "collection-targets.v1.json"
+    }
+  ]
+}

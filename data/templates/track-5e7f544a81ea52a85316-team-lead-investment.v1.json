@@ -1,0 +1,711 @@
+{
+  "schema_version": "1.0",
+  "template_id": "track_5e7f544a81ea52a85316_team_lead_investment",
+  "version": "1.0.0",
+  "name": "广告自动化团队负责人投资评估模板",
+  "description": "广告 / 广告自动化：通用经营框架（尚无专属行业规则）。由本地规则生成器生成，不调用真实模型；不是样本统计结论。样本不足不阻止使用，人工总检查并发布后可评估。",
+  "status": "ai_generated_draft",
+  "scope": {
+    "industry": "广告",
+    "track": "广告自动化",
+    "investment_purpose": "investment_screening",
+    "project_stage": "已有产品，准备规模化商业化",
+    "candidate_role": "团队负责人",
+    "jurisdiction": "中国大陆",
+    "applicability_notes": [
+      "权重为初始建议，不代表实证成功概率；按项目阶段及适用地区检查后发布。",
+      "缺少候选人证据时应标记未确认，不得自动填入低分或推定合规。",
+      "当前为通用经营框架；发布前请补充该细分赛道的专属指标与监管要求。"
+    ],
+    "non_applicable_scenarios": []
+  },
+  "generation": {
+    "method": "base_template_plus_ai_adaptation",
+    "generated_at": "2026-09-21T11:17:37.826Z",
+    "model": "mock-template-provider",
+    "prompt_version": "industry-rules-v2",
+    "requires_human_approval": true,
+    "approved_by": null,
+    "approved_at": null,
+    "policy_pack_id": "track_5e7f544a81ea52a85316_team_lead_investment",
+    "policy_pack_version": "1.0.0",
+    "policy_pack_status": "approved",
+    "policy_pack_match": "exact"
+  },
+  "score_scale": 5,
+  "dimensions": [
+    {
+      "id": "market_value",
+      "name": "广告自动化客户需求与价值",
+      "weight": 18,
+      "investment_question": "在广告自动化业务中，团队能否以可核验材料证明广告自动化客户需求与价值？重点核对目标客户、实际痛点、替代方案与需求验证。",
+      "sub_indicators": [
+        {
+          "id": "market_value_result",
+          "name": "实际成果",
+          "question": "是否提供目标客户、实际痛点、替代方案与需求验证的原始结果和统计口径？"
+        },
+        {
+          "id": "market_value_repeat",
+          "name": "可复制性",
+          "question": "不同客户、项目或周期是否能够重复取得结果？"
+        }
+      ],
+      "required_evidence": [
+        "目标客户、实际痛点、替代方案与需求验证的原始记录",
+        "对应客户或项目的合同、验收或第三方验证材料"
+      ],
+      "verification_methods": [
+        "核对来源、观察周期、样本范围和分母口径",
+        "交叉验证原始记录及客户反馈，不以计划替代已实现结果"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "广告自动化客户需求与价值：经证据核实，关键要求尚未达到，或实际效果持续低于团队承诺；核对目标客户、实际痛点、替代方案与需求验证。"
+        },
+        {
+          "score": 2,
+          "description": "广告自动化客户需求与价值：已有单次试验或局部成果，但关键要求尚未稳定达到；核对目标客户、实际痛点、替代方案与需求验证。"
+        },
+        {
+          "score": 3,
+          "description": "广告自动化客户需求与价值：在目标场景完成验证，关键要求基本达到且原始结果可追溯；核对目标客户、实际痛点、替代方案与需求验证。"
+        },
+        {
+          "score": 4,
+          "description": "广告自动化客户需求与价值：跨多个项目或周期稳定达到要求，有可重复流程和异常处置记录；核对目标客户、实际痛点、替代方案与需求验证。"
+        },
+        {
+          "score": 5,
+          "description": "广告自动化客户需求与价值：跨场景持续验证优于明确对照，规模扩大仍保持结果且有独立证据支持；核对目标客户、实际痛点、替代方案与需求验证。"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "id": "product_validation",
+      "name": "广告自动化产品与服务验证",
+      "weight": 18,
+      "investment_question": "在广告自动化业务中，团队能否以可核验材料证明广告自动化产品与服务验证？重点核对真实使用、交付质量、验收结果与复现记录。",
+      "sub_indicators": [
+        {
+          "id": "product_validation_result",
+          "name": "实际成果",
+          "question": "是否提供真实使用、交付质量、验收结果与复现记录的原始结果和统计口径？"
+        },
+        {
+          "id": "product_validation_repeat",
+          "name": "可复制性",
+          "question": "不同客户、项目或周期是否能够重复取得结果？"
+        }
+      ],
+      "required_evidence": [
+        "真实使用、交付质量、验收结果与复现记录的原始记录",
+        "对应客户或项目的合同、验收或第三方验证材料"
+      ],
+      "verification_methods": [
+        "核对来源、观察周期、样本范围和分母口径",
+        "交叉验证原始记录及客户反馈，不以计划替代已实现结果"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "广告自动化产品与服务验证：经证据核实，关键要求尚未达到，或实际效果持续低于团队承诺；核对真实使用、交付质量、验收结果与复现记录。"
+        },
+        {
+          "score": 2,
+          "description": "广告自动化产品与服务验证：已有单次试验或局部成果，但关键要求尚未稳定达到；核对真实使用、交付质量、验收结果与复现记录。"
+        },
+        {
+          "score": 3,
+          "description": "广告自动化产品与服务验证：在目标场景完成验证，关键要求基本达到且原始结果可追溯；核对真实使用、交付质量、验收结果与复现记录。"
+        },
+        {
+          "score": 4,
+          "description": "广告自动化产品与服务验证：跨多个项目或周期稳定达到要求，有可重复流程和异常处置记录；核对真实使用、交付质量、验收结果与复现记录。"
+        },
+        {
+          "score": 5,
+          "description": "广告自动化产品与服务验证：跨场景持续验证优于明确对照，规模扩大仍保持结果且有独立证据支持；核对真实使用、交付质量、验收结果与复现记录。"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "id": "commercial_economics",
+      "name": "商业化与单位经济",
+      "weight": 16,
+      "investment_question": "在广告自动化业务中，团队能否以可核验材料证明商业化与单位经济？重点核对订单回款、成本毛利、复购与现金流。",
+      "sub_indicators": [
+        {
+          "id": "commercial_economics_result",
+          "name": "实际成果",
+          "question": "是否提供订单回款、成本毛利、复购与现金流的原始结果和统计口径？"
+        },
+        {
+          "id": "commercial_economics_repeat",
+          "name": "可复制性",
+          "question": "不同客户、项目或周期是否能够重复取得结果？"
+        }
+      ],
+      "required_evidence": [
+        "订单回款、成本毛利、复购与现金流的原始记录",
+        "对应客户或项目的合同、验收或第三方验证材料"
+      ],
+      "verification_methods": [
+        "核对来源、观察周期、样本范围和分母口径",
+        "交叉验证原始记录及客户反馈，不以计划替代已实现结果"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "商业化与单位经济：经证据核实，关键要求尚未达到，或实际效果持续低于团队承诺；核对订单回款、成本毛利、复购与现金流。"
+        },
+        {
+          "score": 2,
+          "description": "商业化与单位经济：已有单次试验或局部成果，但关键要求尚未稳定达到；核对订单回款、成本毛利、复购与现金流。"
+        },
+        {
+          "score": 3,
+          "description": "商业化与单位经济：在目标场景完成验证，关键要求基本达到且原始结果可追溯；核对订单回款、成本毛利、复购与现金流。"
+        },
+        {
+          "score": 4,
+          "description": "商业化与单位经济：跨多个项目或周期稳定达到要求，有可重复流程和异常处置记录；核对订单回款、成本毛利、复购与现金流。"
+        },
+        {
+          "score": 5,
+          "description": "商业化与单位经济：跨场景持续验证优于明确对照，规模扩大仍保持结果且有独立证据支持；核对订单回款、成本毛利、复购与现金流。"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "id": "scale_delivery",
+      "name": "规模化交付能力",
+      "weight": 15,
+      "investment_question": "在广告自动化业务中，团队能否以可核验材料证明规模化交付能力？重点核对交付周期、资源瓶颈、质量一致性与扩张成本。",
+      "sub_indicators": [
+        {
+          "id": "scale_delivery_result",
+          "name": "实际成果",
+          "question": "是否提供交付周期、资源瓶颈、质量一致性与扩张成本的原始结果和统计口径？"
+        },
+        {
+          "id": "scale_delivery_repeat",
+          "name": "可复制性",
+          "question": "不同客户、项目或周期是否能够重复取得结果？"
+        }
+      ],
+      "required_evidence": [
+        "交付周期、资源瓶颈、质量一致性与扩张成本的原始记录",
+        "对应客户或项目的合同、验收或第三方验证材料"
+      ],
+      "verification_methods": [
+        "核对来源、观察周期、样本范围和分母口径",
+        "交叉验证原始记录及客户反馈，不以计划替代已实现结果"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "规模化交付能力：经证据核实，关键要求尚未达到，或实际效果持续低于团队承诺；核对交付周期、资源瓶颈、质量一致性与扩张成本。"
+        },
+        {
+          "score": 2,
+          "description": "规模化交付能力：已有单次试验或局部成果，但关键要求尚未稳定达到；核对交付周期、资源瓶颈、质量一致性与扩张成本。"
+        },
+        {
+          "score": 3,
+          "description": "规模化交付能力：在目标场景完成验证，关键要求基本达到且原始结果可追溯；核对交付周期、资源瓶颈、质量一致性与扩张成本。"
+        },
+        {
+          "score": 4,
+          "description": "规模化交付能力：跨多个项目或周期稳定达到要求，有可重复流程和异常处置记录；核对交付周期、资源瓶颈、质量一致性与扩张成本。"
+        },
+        {
+          "score": 5,
+          "description": "规模化交付能力：跨场景持续验证优于明确对照，规模扩大仍保持结果且有独立证据支持；核对交付周期、资源瓶颈、质量一致性与扩张成本。"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "id": "competitive_position",
+      "name": "竞争差异与持续性",
+      "weight": 13,
+      "investment_question": "在广告自动化业务中，团队能否以可核验材料证明竞争差异与持续性？重点核对客户选择理由、替代难度与独立对照。",
+      "sub_indicators": [
+        {
+          "id": "competitive_position_result",
+          "name": "实际成果",
+          "question": "是否提供客户选择理由、替代难度与独立对照的原始结果和统计口径？"
+        },
+        {
+          "id": "competitive_position_repeat",
+          "name": "可复制性",
+          "question": "不同客户、项目或周期是否能够重复取得结果？"
+        }
+      ],
+      "required_evidence": [
+        "客户选择理由、替代难度与独立对照的原始记录",
+        "对应客户或项目的合同、验收或第三方验证材料"
+      ],
+      "verification_methods": [
+        "核对来源、观察周期、样本范围和分母口径",
+        "交叉验证原始记录及客户反馈，不以计划替代已实现结果"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "竞争差异与持续性：经证据核实，关键要求尚未达到，或实际效果持续低于团队承诺；核对客户选择理由、替代难度与独立对照。"
+        },
+        {
+          "score": 2,
+          "description": "竞争差异与持续性：已有单次试验或局部成果，但关键要求尚未稳定达到；核对客户选择理由、替代难度与独立对照。"
+        },
+        {
+          "score": 3,
+          "description": "竞争差异与持续性：在目标场景完成验证，关键要求基本达到且原始结果可追溯；核对客户选择理由、替代难度与独立对照。"
+        },
+        {
+          "score": 4,
+          "description": "竞争差异与持续性：跨多个项目或周期稳定达到要求，有可重复流程和异常处置记录；核对客户选择理由、替代难度与独立对照。"
+        },
+        {
+          "score": 5,
+          "description": "竞争差异与持续性：跨场景持续验证优于明确对照，规模扩大仍保持结果且有独立证据支持；核对客户选择理由、替代难度与独立对照。"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "id": "risk_governance",
+      "name": "权利合规与风险管理",
+      "weight": 10,
+      "investment_question": "在广告自动化业务中，团队能否以可核验材料证明权利合规与风险管理？重点核对经营资质适用性、权利链、风险清单与处置记录。",
+      "sub_indicators": [
+        {
+          "id": "risk_governance_result",
+          "name": "实际成果",
+          "question": "是否提供经营资质适用性、权利链、风险清单与处置记录的原始结果和统计口径？"
+        },
+        {
+          "id": "risk_governance_repeat",
+          "name": "可复制性",
+          "question": "不同客户、项目或周期是否能够重复取得结果？"
+        }
+      ],
+      "required_evidence": [
+        "经营资质适用性、权利链、风险清单与处置记录的原始记录",
+        "对应客户或项目的合同、验收或第三方验证材料"
+      ],
+      "verification_methods": [
+        "核对来源、观察周期、样本范围和分母口径",
+        "交叉验证原始记录及客户反馈，不以计划替代已实现结果"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "权利合规与风险管理：经证据核实，关键要求尚未达到，或实际效果持续低于团队承诺；核对经营资质适用性、权利链、风险清单与处置记录。"
+        },
+        {
+          "score": 2,
+          "description": "权利合规与风险管理：已有单次试验或局部成果，但关键要求尚未稳定达到；核对经营资质适用性、权利链、风险清单与处置记录。"
+        },
+        {
+          "score": 3,
+          "description": "权利合规与风险管理：在目标场景完成验证，关键要求基本达到且原始结果可追溯；核对经营资质适用性、权利链、风险清单与处置记录。"
+        },
+        {
+          "score": 4,
+          "description": "权利合规与风险管理：跨多个项目或周期稳定达到要求，有可重复流程和异常处置记录；核对经营资质适用性、权利链、风险清单与处置记录。"
+        },
+        {
+          "score": 5,
+          "description": "权利合规与风险管理：跨场景持续验证优于明确对照，规模扩大仍保持结果且有独立证据支持；核对经营资质适用性、权利链、风险清单与处置记录。"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    {
+      "id": "team_execution",
+      "name": "负责人及团队执行",
+      "weight": 10,
+      "investment_question": "在广告自动化业务中，团队能否以可核验材料证明负责人及团队执行？重点核对负责人实际贡献、组织分工与里程碑兑现。",
+      "sub_indicators": [
+        {
+          "id": "team_execution_result",
+          "name": "实际成果",
+          "question": "是否提供负责人实际贡献、组织分工与里程碑兑现的原始结果和统计口径？"
+        },
+        {
+          "id": "team_execution_repeat",
+          "name": "可复制性",
+          "question": "不同客户、项目或周期是否能够重复取得结果？"
+        }
+      ],
+      "required_evidence": [
+        "负责人实际贡献、组织分工与里程碑兑现的原始记录",
+        "对应客户或项目的合同、验收或第三方验证材料"
+      ],
+      "verification_methods": [
+        "核对来源、观察周期、样本范围和分母口径",
+        "交叉验证原始记录及客户反馈，不以计划替代已实现结果"
+      ],
+      "anchors": [
+        {
+          "score": 1,
+          "description": "负责人及团队执行：经证据核实，关键要求尚未达到，或实际效果持续低于团队承诺；核对负责人实际贡献、组织分工与里程碑兑现。"
+        },
+        {
+          "score": 2,
+          "description": "负责人及团队执行：已有单次试验或局部成果，但关键要求尚未稳定达到；核对负责人实际贡献、组织分工与里程碑兑现。"
+        },
+        {
+          "score": 3,
+          "description": "负责人及团队执行：在目标场景完成验证，关键要求基本达到且原始结果可追溯；核对负责人实际贡献、组织分工与里程碑兑现。"
+        },
+        {
+          "score": 4,
+          "description": "负责人及团队执行：跨多个项目或周期稳定达到要求，有可重复流程和异常处置记录；核对负责人实际贡献、组织分工与里程碑兑现。"
+        },
+        {
+          "score": 5,
+          "description": "负责人及团队执行：跨场景持续验证优于明确对照，规模扩大仍保持结果且有独立证据支持；核对负责人实际贡献、组织分工与里程碑兑现。"
+        }
+      ],
+      "information_statuses": [
+        "sufficient",
+        "partially_sufficient",
+        "unconfirmed",
+        "conflicting",
+        "not_applicable"
+      ],
+      "confidence_levels": [
+        "high",
+        "medium",
+        "low"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "sector_rights_and_safety",
+      "name": "广告自动化经营准入、权利与安全",
+      "order": 1,
+      "critical": true,
+      "question": "在广告/广告自动化业务中，广告自动化经营准入、权利与安全是否满足要求？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "适用资质、授权边界及风险控制有可核验证据"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "存在已证实的重大无权经营、侵权或未处置安全风险"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "材料缺失、口径冲突或适用性尚不明确，不能推定符合或不符合"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "支持“适用资质、授权边界及风险控制有可核验证据”的原始材料",
+        "适用范围、出具主体及日期说明"
+      ],
+      "verification_methods": [
+        "核对原始出处与适用范围，必要时专业复核"
+      ],
+      "veto_conditions": [
+        "存在已证实的重大无权经营、侵权或未处置安全风险"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "leader_integrity_and_verifiability",
+      "name": "负责人诚信与可核查性",
+      "order": 2,
+      "critical": true,
+      "question": "在广告/广告自动化业务中，负责人诚信与可核查性是否满足要求？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "身份履历、实际贡献及关键经营数据可交叉核验"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "存在已证实的身份、履历或经营数据造假"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "材料缺失、口径冲突或适用性尚不明确，不能推定符合或不符合"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "支持“身份履历、实际贡献及关键经营数据可交叉核验”的原始材料",
+        "适用范围、出具主体及日期说明"
+      ],
+      "verification_methods": [
+        "核对原始出处与适用范围，必要时专业复核"
+      ],
+      "veto_conditions": [
+        "存在已证实的身份、履历或经营数据造假"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "commercialization_path",
+      "name": "商业化路径",
+      "order": 3,
+      "critical": true,
+      "question": "在广告/广告自动化业务中，商业化路径是否满足要求？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "付费主体、合同回款及成本逻辑明确且可核验"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "核心交易被证实虚假或收入路径明确不可执行"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "材料缺失、口径冲突或适用性尚不明确，不能推定符合或不符合"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "支持“付费主体、合同回款及成本逻辑明确且可核验”的原始材料",
+        "适用范围、出具主体及日期说明"
+      ],
+      "verification_methods": [
+        "核对原始出处与适用范围，必要时专业复核"
+      ],
+      "veto_conditions": [
+        "核心交易被证实虚假或收入路径明确不可执行"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    },
+    {
+      "id": "conflict_of_interest",
+      "name": "利益冲突",
+      "order": 4,
+      "critical": true,
+      "question": "在广告/广告自动化业务中，利益冲突是否满足要求？",
+      "criteria": [
+        {
+          "status": "pass",
+          "criteria": [
+            "实际控制、关联交易和外部利益已披露并有管理措施"
+          ]
+        },
+        {
+          "status": "fail",
+          "criteria": [
+            "存在已证实的隐瞒重大关联交易、利益输送或资金挪用"
+          ]
+        },
+        {
+          "status": "unconfirmed",
+          "criteria": [
+            "材料缺失、口径冲突或适用性尚不明确，不能推定符合或不符合"
+          ]
+        }
+      ],
+      "required_evidence": [
+        "支持“实际控制、关联交易和外部利益已披露并有管理措施”的原始材料",
+        "适用范围、出具主体及日期说明"
+      ],
+      "verification_methods": [
+        "核对原始出处与适用范围，必要时专业复核"
+      ],
+      "veto_conditions": [
+        "存在已证实的隐瞒重大关联交易、利益输送或资金挪用"
+      ],
+      "unconfirmed_action": {
+        "generate_supplement_request": true,
+        "required_fields": [
+          "material",
+          "owner",
+          "due_date",
+          "verification_method",
+          "status"
+        ]
+      }
+    }
+  ],
+  "decision_rules": {
+    "gate_statuses": [
+      "pass",
+      "fail",
+      "unconfirmed"
+    ],
+    "two_or_more_failed_gates_block_final_decision": true,
+    "unconfirmed_gate_blocks_recommendation": true,
+    "unconfirmed_allowed_conclusions": [
+      "needs_more_information",
+      "hold"
+    ],
+    "unconfirmed_is_not_failure": true,
+    "gates_cannot_be_offset_by_score": true,
+    "ai_can_only_recommend_gate_result": true,
+    "manual_gate_change_requires_reason": true,
+    "veto_issue_action": "suspend_and_force_human_legal_review",
+    "score_formula": "sum((dimension_score / 5) * dimension_weight)",
+    "score_bands": [
+      {
+        "min": 80,
+        "max": 100,
+        "meaning": "能力表现较强；仅在门槛满足且证据充分后进入投资讨论"
+      },
+      {
+        "min": 65,
+        "max": 79.99,
+        "meaning": "基本具备条件，仍需核实短板与关键假设"
+      },
+      {
+        "min": 50,
+        "max": 64.99,
+        "meaning": "能力或证据不足，需补充验证"
+      },
+      {
+        "min": 0,
+        "max": 49.99,
+        "meaning": "当前能力表现尚未达到规模化要求"
+      }
+    ]
+  },
+  "workflow": {
+    "ordered_steps": [
+      "sector_rights_and_safety",
+      "leader_integrity_and_verifiability",
+      "commercialization_path",
+      "conflict_of_interest",
+      "weighted_dimension_scoring",
+      "human_review",
+      "authorized_final_decision"
+    ],
+    "ai_can_auto_reject": false,
+    "human_final_decision_required": true
+  },
+  "sensitive_fields_excluded": [
+    "性别",
+    "年龄",
+    "婚育状态",
+    "民族或种族",
+    "宗教",
+    "健康状况"
+  ],
+  "sources": []
+}

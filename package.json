@@ -1,0 +1,37 @@
+{
+  "name": "candidate-evaluation-template-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "候选人投资评估模板生成服务 MVP",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "dev:real": "tsx scripts/start-real.ts",
+    "test:model": "tsx scripts/smoke-real-model.ts",
+    "prepare:render": "node scripts/prepare-render.mjs",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "validate:config": "node scripts/validate-config.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^10.1.1",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "exceljs": "^4.4.0",
+    "fastify": "^5.12.1"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

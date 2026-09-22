@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0.0",
+  "plan_version": "1.0.0",
+  "governance": {
+    "purpose": "为每个行业赛道登记可自动采集的公开企业目标和来源组合；用户只选择赛道，系统按计划批量执行。",
+    "target_universe_is_not_exhaustive": true,
+    "automatic_collection_does_not_mean_automatic_attribution": true
+  },
+  "plans": [
+    {
+      "industry_code": "cultural_media",
+      "track_code": "ai_short_drama",
+      "track_name": "AI短剧",
+      "targets": [
+        {
+          "target_key": "cn-zhongwen-online-tong-zhilei",
+          "target_name": "中文在线公开经营资料",
+          "organization_name": "中文在线集团股份有限公司",
+          "sample_key": "cn-zhongwen-online-tong-zhilei-2026-08",
+          "urls": [
+            {
+              "source_code": "cninfo_filings",
+              "url": "https://www.cninfo.com.cn/"
+            },
+            {
+              "source_code": "company_official_channels",
+              "url": "https://www.col.com/"
+            }
+          ]
+        },
+        {
+          "target_key": "cn-ireader-cheng-xiangjun",
+          "target_name": "掌阅科技公开经营资料",
+          "organization_name": "掌阅科技股份有限公司",
+          "sample_key": "cn-ireader-cheng-xiangjun-2026-08",
+          "urls": [
+            {
+              "source_code": "cninfo_filings",
+              "url": "https://www.cninfo.com.cn/"
+            },
+            {
+              "source_code": "company_official_channels",
+              "url": "https://www.ireader.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_code": "business_services",
+      "track_code": "agentic_commerce",
+      "track_name": "Agentic Commerce",
+      "targets": [
+        {
+          "target_key": "cn-meituan-wang-xing",
+          "target_name": "美团公开经营资料",
+          "organization_name": "美团",
+          "sample_key": "cn-meituan-wang-xing-agentic-commerce-2026-08",
+          "urls": [
+            {
+              "source_code": "agent_company_filings",
+              "url": "https://www.hkexnews.hk/"
+            },
+            {
+              "source_code": "agent_company_official_channels",
+              "url": "https://www.meituan.com/"
+            }
+          ]
+        },
+        {
+          "target_key": "us-shopify-tobias-lutke",
+          "target_name": "Shopify公开经营资料",
+          "organization_name": "Shopify",
+          "sample_key": "us-shopify-tobias-lutke-agentic-commerce-2026-08",
+          "urls": [
+            {
+              "source_code": "agent_company_filings",
+              "url": "https://www.sec.gov/edgar/search/"
+            },
+            {
+              "source_code": "agent_company_official_channels",
+              "url": "https://www.shopify.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_code": "industry_533b759779d16280",
+      "industry_name": "医疗科技",
+      "track_code": "track_667a6167533b7597",
+      "track_name": "智慧医疗",
+      "targets": [
+        {
+          "target_key": "track_667a6167533b7597-1",
+          "target_name": "国家药品监督管理局医疗器械唯一标识数据库",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_667a6167533b7597_official_public",
+              "url": "https://udi.nmpa.gov.cn/download.html"
+            }
+          ]
+        },
+        {
+          "target_key": "track_667a6167533b7597-2",
+          "target_name": "美国证券交易委员会EDGAR",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_667a6167533b7597_official_public",
+              "url": "https://www.sec.gov/edgar/search/"
+            }
+          ]
+        },
+        {
+          "target_key": "track_667a6167533b7597-3",
+          "target_name": "北京鹰瞳科技发展股份有限公司公开披露",
+          "organization_name": "北京鹰瞳科技发展股份有限公司",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_667a6167533b7597_official_public",
+              "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0428/2025042801197.pdf"
+            }
+          ]
+        },
+        {
+          "target_key": "track_667a6167533b7597-4",
+          "target_name": "医渡科技有限公司公开披露",
+          "organization_name": "医渡科技有限公司",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_667a6167533b7597_official_public",
+              "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0725/2025072501438_c.pdf"
+            }
+          ]
+        },
+        {
+          "target_key": "track_667a6167533b7597-5",
+          "target_name": "Tempus AI, Inc.公开披露",
+          "organization_name": "Tempus AI, Inc.",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_667a6167533b7597_official_public",
+              "url": "https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm"
+            }
+          ]
+        },
+        {
+          "target_key": "track_667a6167533b7597-6",
+          "target_name": "Recursion Pharmaceuticals, Inc.公开披露",
+          "organization_name": "Recursion Pharmaceuticals, Inc.",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_667a6167533b7597_official_public",
+              "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/0001601830-26-000039-index.htm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_code": "industry_65705b575a314e50",
+      "industry_name": "数字娱乐",
+      "track_code": "track_4e9252a85f716e38",
+      "track_name": "互动影游",
+      "targets": [
+        {
+          "target_key": "track_4e9252a85f716e38-1",
+          "target_name": "美国证券交易委员会EDGAR",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_4e9252a85f716e38_official_public",
+              "url": "https://www.sec.gov/edgar/search/"
+            }
+          ]
+        },
+        {
+          "target_key": "track_4e9252a85f716e38-2",
+          "target_name": "巨潮资讯网上市公司公告",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_4e9252a85f716e38_official_public",
+              "url": "https://www.cninfo.com.cn/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_code": "industry_667a6167533b7597",
+      "industry_name": "智慧医疗",
+      "track_code": "track_533b7597566868b0",
+      "track_name": "医疗器械",
+      "targets": [
+        {
+          "target_key": "track_533b7597566868b0-1",
+          "target_name": "国家药品监督管理局医疗器械唯一标识数据库",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_533b7597566868b0_official_public",
+              "url": "https://udi.nmpa.gov.cn/download.html"
+            }
+          ]
+        },
+        {
+          "target_key": "track_533b7597566868b0-2",
+          "target_name": "美国证券交易委员会EDGAR",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_533b7597566868b0_official_public",
+              "url": "https://www.sec.gov/edgar/search/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_code": "industry_5e7f544a",
+      "industry_name": "广告",
+      "track_code": "track_5e7f544a81ea52a85316",
+      "track_name": "广告自动化",
+      "targets": [
+        {
+          "target_key": "track_5e7f544a81ea52a85316-1",
+          "target_name": "美国证券交易委员会EDGAR",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_5e7f544a81ea52a85316_official_public",
+              "url": "https://www.sec.gov/edgar/search/"
+            }
+          ]
+        },
+        {
+          "target_key": "track_5e7f544a81ea52a85316-2",
+          "target_name": "巨潮资讯网上市公司公告",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "track_5e7f544a81ea52a85316_official_public",
+              "url": "https://www.cninfo.com.cn/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industry_code": "industry_8f6f4ef6",
+      "industry_name": "软件",
+      "track_code": "saas",
+      "track_name": "企业办公软件SaaS",
+      "targets": [
+        {
+          "target_key": "saas-1",
+          "target_name": "美国证券交易委员会EDGAR",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "saas_official_public",
+              "url": "https://www.sec.gov/edgar/search/"
+            }
+          ]
+        },
+        {
+          "target_key": "saas-2",
+          "target_name": "巨潮资讯网上市公司公告",
+          "organization_name": "行业监管与公开数据源",
+          "sample_key": null,
+          "urls": [
+            {
+              "source_code": "saas_official_public",
+              "url": "https://www.cninfo.com.cn/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

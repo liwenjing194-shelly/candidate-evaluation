@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: candidate-evaluation
+    runtime: node
+    plan: free
+    numInstances: 1
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.16.0
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: TEMPLATE_PROVIDER
+        value: mock
+      - key: FREE_DEMO_MODE
+        value: "true"
+      - key: APP_ACCESS_PASSWORD
+        sync: false

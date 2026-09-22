@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_version": "1.0.0",
+  "notice": "本目录只保存可审计的公开来源入口和目标企业候选种子。发现结果不是事实认定、成功认定或投资建议。",
+  "sources": [
+    {
+      "code": "cn_nhc_ai_health_policy",
+      "name": "国家卫生健康委员会人工智能与卫生健康政策",
+      "category": "regulatory_and_policy",
+      "source_type": "official_public",
+      "url": "https://www.nhc.gov.cn/guihuaxxs/c100133/new_list.shtml",
+      "allowed_domains": ["nhc.gov.cn"],
+      "allowed_methods": ["public_page"],
+      "automation_mode": "public_pages_subject_to_terms",
+      "jurisdictions": ["中国大陆"],
+      "industry_keywords": ["医疗科技", "医疗", "医药", "卫生健康"],
+      "track_keywords": ["AI医疗", "人工智能医疗", "医学人工智能", "医疗大模型"],
+      "quality_baseline": 0.96,
+      "collection_ready": true
+    },
+    {
+      "code": "cn_nmpa_device_udi",
+      "name": "国家药品监督管理局医疗器械唯一标识数据库",
+      "category": "medical_device_regulatory",
+      "source_type": "official_public",
+      "url": "https://udi.nmpa.gov.cn/download.html",
+      "allowed_domains": ["nmpa.gov.cn"],
+      "allowed_methods": ["public_page", "bulk_download"],
+      "automation_mode": "public_download_subject_to_terms",
+      "jurisdictions": ["中国大陆"],
+      "industry_keywords": ["医疗科技", "医疗器械", "数字医疗"],
+      "track_keywords": ["AI医疗", "医学影像AI", "辅助诊断"],
+      "quality_baseline": 0.98,
+      "collection_ready": true
+    },
+    {
+      "code": "cn_cninfo_filings_discovery",
+      "name": "巨潮资讯网上市公司公告",
+      "category": "company_filing",
+      "source_type": "official_public",
+      "url": "https://www.cninfo.com.cn/",
+      "allowed_domains": ["cninfo.com.cn"],
+      "allowed_methods": ["public_page", "public_search"],
+      "automation_mode": "public_pages_subject_to_terms",
+      "jurisdictions": ["中国大陆"],
+      "industry_keywords": ["*"],
+      "track_keywords": ["*"],
+      "quality_baseline": 0.94,
+      "collection_ready": true
+    },
+    {
+      "code": "hk_hkexnews_filings_discovery",
+      "name": "香港交易所披露易",
+      "category": "company_filing",
+      "source_type": "official_public",
+      "url": "https://www.hkexnews.hk/",
+      "allowed_domains": ["hkexnews.hk"],
+      "allowed_methods": ["public_page", "public_search"],
+      "automation_mode": "public_pages_subject_to_terms",
+      "jurisdictions": ["中国香港", "中国大陆"],
+      "industry_keywords": ["*"],
+      "track_keywords": ["*"],
+      "quality_baseline": 0.96,
+      "collection_ready": true
+    },
+    {
+      "code": "us_sec_edgar_discovery",
+      "name": "美国证券交易委员会EDGAR",
+      "category": "company_filing",
+      "source_type": "official_public_api",
+      "url": "https://www.sec.gov/edgar/search/",
+      "allowed_domains": ["sec.gov"],
+      "allowed_methods": ["public_page", "official_api"],
+      "automation_mode": "official_public_access",
+      "jurisdictions": ["美国"],
+      "industry_keywords": ["*"],
+      "track_keywords": ["*"],
+      "quality_baseline": 0.98,
+      "collection_ready": true
+    },
+    {
+      "code": "cn_interactive_entertainment_public_filings",
+      "name": "互动娱乐上市公司公开披露",
+      "category": "company_filing",
+      "source_type": "official_public",
+      "url": "https://www.cninfo.com.cn/",
+      "allowed_domains": ["cninfo.com.cn", "hkexnews.hk", "sec.gov"],
+      "allowed_methods": ["public_page", "public_search", "manual_download"],
+      "automation_mode": "local_material_first",
+      "jurisdictions": ["中国大陆", "中国香港", "美国"],
+      "industry_keywords": ["数字娱乐", "文化传媒", "游戏", "影视娱乐"],
+      "track_keywords": ["互动影游", "互动影视", "互动视频", "影游融合"],
+      "quality_baseline": 0.94,
+      "collection_ready": true
+    }
+  ],
+  "targets": [
+    {
+      "target_key": "cn-airdoc-ai-health",
+      "organization_name": "北京鹰瞳科技发展股份有限公司",
+      "market": "香港交易所",
+      "ticker": "2251",
+      "jurisdiction": "中国大陆",
+      "sample_type_suggestion": "benchmark",
+      "sector_tags": ["医疗科技", "AI医疗", "医学影像AI", "辅助诊断", "数字医疗"],
+      "discovery_reason": "公开年报将公司描述为人工智能医疗器械企业，并披露AI辅助诊断和健康风险评估产品。",
+      "official_sources": [
+        {"source_code": "hk_hkexnews_filings_discovery", "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0428/2025042801197.pdf"},
+        {"source_code": "company_official", "url": "https://www.airdoc.com/"}
+      ]
+    },
+    {
+      "target_key": "cn-yidu-tech-ai-health",
+      "organization_name": "医渡科技有限公司",
+      "market": "香港交易所",
+      "ticker": "2158",
+      "jurisdiction": "中国大陆",
+      "sample_type_suggestion": "benchmark",
+      "sector_tags": ["医疗科技", "AI医疗", "医疗大数据", "医疗大模型", "健康管理"],
+      "discovery_reason": "公开年报披露YiduCore、AI医疗数据智能平台及医院和监管机构覆盖情况。",
+      "official_sources": [
+        {"source_code": "hk_hkexnews_filings_discovery", "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0725/2025072501438_c.pdf"},
+        {"source_code": "company_official", "url": "https://www.yidutechgroup.com/"}
+      ]
+    },
+    {
+      "target_key": "us-tempus-ai-health",
+      "organization_name": "Tempus AI, Inc.",
+      "market": "Nasdaq",
+      "ticker": "TEM",
+      "jurisdiction": "美国",
+      "sample_type_suggestion": "benchmark",
+      "sector_tags": ["AI医疗", "precision medicine", "智能诊断", "临床数据", "医疗科技"],
+      "discovery_reason": "SEC定期报告和投资者关系页面将公司描述为把人工智能与机器学习用于医疗和精准医学的医疗科技公司。",
+      "official_sources": [
+        {"source_code": "us_sec_edgar_discovery", "url": "https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm"},
+        {"source_code": "company_official", "url": "https://investors.tempus.com/"}
+      ]
+    },
+    {
+      "target_key": "us-recursion-ai-drug-discovery",
+      "organization_name": "Recursion Pharmaceuticals, Inc.",
+      "market": "Nasdaq",
+      "ticker": "RXRX",
+      "jurisdiction": "美国",
+      "sample_type_suggestion": "control",
+      "sector_tags": ["AI医疗", "AI制药", "AI drug discovery", "TechBio", "医疗科技"],
+      "discovery_reason": "SEC定期报告和投资者关系页面披露其AI原生药物发现与开发平台，可作为相邻商业模式对照。",
+      "official_sources": [
+        {"source_code": "us_sec_edgar_discovery", "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000039/0001601830-26-000039-index.htm"},
+        {"source_code": "company_official", "url": "https://ir.recursion.com/"}
+      ]
+    },
+    {
+      "target_key": "cn-bilibili-interactive-entertainment",
+      "organization_name": "哔哩哔哩股份有限公司",
+      "market": "香港交易所 / Nasdaq",
+      "ticker": "9626 / BILI",
+      "jurisdiction": "中国大陆",
+      "sample_type_suggestion": "benchmark",
+      "sector_tags": ["数字娱乐", "互动影游", "互动视频", "内容社区", "游戏"],
+      "discovery_reason": "公开披露充分的数字娱乐与互动内容平台候选，可用于观察内容、社区、游戏及商业化协同能力。",
+      "official_sources": [
+        {"source_code": "hk_hkexnews_filings_discovery", "url": "https://www.hkexnews.hk/"},
+        {"source_code": "company_official", "url": "https://ir.bilibili.com/"}
+      ]
+    },
+    {
+      "target_key": "cn-tencent-interactive-entertainment",
+      "organization_name": "腾讯控股有限公司",
+      "market": "香港交易所",
+      "ticker": "0700",
+      "jurisdiction": "中国大陆",
+      "sample_type_suggestion": "benchmark",
+      "sector_tags": ["数字娱乐", "互动影游", "游戏", "内容生态", "影游融合"],
+      "discovery_reason": "公开披露充分的数字内容和游戏企业候选，可用于观察IP、研发、发行、用户运营与规模化能力。",
+      "official_sources": [
+        {"source_code": "hk_hkexnews_filings_discovery", "url": "https://www.hkexnews.hk/"},
+        {"source_code": "company_official", "url": "https://www.tencent.com/zh-cn/investors.html"}
+      ]
+    },
+    {
+      "target_key": "cn-iqiyi-interactive-video",
+      "organization_name": "爱奇艺公司",
+      "market": "Nasdaq",
+      "ticker": "IQ",
+      "jurisdiction": "中国大陆",
+      "sample_type_suggestion": "control",
+      "sector_tags": ["数字娱乐", "互动影游", "互动视频", "影视娱乐", "会员内容"],
+      "discovery_reason": "长视频与互动内容相邻业务候选，可作为内容制作、平台分发和会员商业模式的普通对照。",
+      "official_sources": [
+        {"source_code": "us_sec_edgar_discovery", "url": "https://www.sec.gov/edgar/search/"},
+        {"source_code": "company_official", "url": "https://ir.iqiyi.com/"}
+      ]
+    },
+    {
+      "target_key": "cn-netease-digital-entertainment",
+      "organization_name": "网易公司",
+      "market": "香港交易所 / Nasdaq",
+      "ticker": "9999 / NTES",
+      "jurisdiction": "中国大陆",
+      "sample_type_suggestion": "control",
+      "sector_tags": ["数字娱乐", "互动影游", "游戏", "在线内容", "IP运营"],
+      "discovery_reason": "游戏和数字内容相邻业务候选，可作为产品研发、长线运营与全球发行能力的普通对照。",
+      "official_sources": [
+        {"source_code": "hk_hkexnews_filings_discovery", "url": "https://www.hkexnews.hk/"},
+        {"source_code": "company_official", "url": "https://ir.netease.com/"}
+      ]
+    }
+  ]
+}

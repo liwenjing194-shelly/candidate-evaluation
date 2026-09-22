@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "policy_pack_id": "ai_short_drama_team_lead_investment",
+  "version": "1.0.0",
+  "name": "AI短剧团队负责人投资评估规则包",
+  "status": "approved",
+  "default_for_mock": true,
+  "taxonomy": {
+    "industry": {
+      "code": "culture_media",
+      "name": "文化传媒",
+      "aliases": ["文化娱乐", "传媒"]
+    },
+    "track": {
+      "code": "ai_short_drama",
+      "name": "AI短剧",
+      "aliases": ["AI微短剧", "AI动画短剧", "生成式AI短剧"]
+    }
+  },
+  "definitions": {
+    "industry": "文化传媒是以内容创作、传播和IP运营产生用户价值与商业回报的行业。",
+    "track": "AI短剧是将生成式AI用于剧本、画面、声音或后期等环节，并以短篇连续视听内容进行生产和商业化的赛道。"
+  },
+  "applicability": {
+    "investment_purposes": ["investment_screening"],
+    "candidate_roles": ["团队负责人"],
+    "project_stages": ["已有团队，准备规模化生产"],
+    "jurisdictions": ["中国大陆"]
+  },
+  "template_file": "../templates/ai-short-drama-team-lead-investment.v1.json",
+  "required_gate_order": [
+    "ip_and_copyright",
+    "leader_integrity_and_verifiability",
+    "commercialization_path",
+    "conflict_of_interest"
+  ],
+  "governance_rules": {
+    "weights_total": 100,
+    "score_scale": 5,
+    "two_or_more_failed_gates_block_final_decision": true,
+    "unconfirmed_gate_blocks_recommendation": true,
+    "unconfirmed_is_not_failure": true,
+    "gates_cannot_be_offset_by_score": true,
+    "ai_can_only_recommend_gate_result": true,
+    "manual_gate_change_requires_reason": true,
+    "human_final_decision_required": true
+  },
+  "review": {
+    "approved_by": "投资评估规则负责人",
+    "approved_at": "2026-08-28T00:00:00+08:00",
+    "change_summary": "基于已确认的AI短剧表一、表二规则建立首个独立规则包"
+  }
+}

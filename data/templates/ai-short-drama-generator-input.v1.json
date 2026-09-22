@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "request_id": "ai_short_drama_team_lead_v1",
+  "industry": {
+    "name": "文化传媒",
+    "normalized_code": "culture_media"
+  },
+  "track": {
+    "name": "AI短剧",
+    "normalized_code": "ai_short_drama",
+    "aliases": ["AIGC短剧", "生成式AI微短剧", "AI动画短剧"]
+  },
+  "investment_purpose": "investment_screening",
+  "project_stage": "已有团队，准备规模化生产",
+  "candidate_role": "团队负责人",
+  "jurisdiction": "中国大陆",
+  "language": "zh-CN",
+  "investment_thesis": "寻找具备可验证作品、可复制AI生产流程、可持续商业化能力和清晰权利链的团队负责人。",
+  "required_gate_topics": [
+    "ip_and_copyright",
+    "leader_integrity_and_verifiability",
+    "commercialization_path",
+    "conflict_of_interest"
+  ],
+  "generation_constraints": {
+    "dimension_count_min": 6,
+    "dimension_count_max": 8,
+    "score_scale": 5,
+    "require_sources": true,
+    "require_human_approval": true
+  }
+}

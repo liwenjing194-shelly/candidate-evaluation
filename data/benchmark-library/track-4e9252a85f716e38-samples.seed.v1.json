@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_version": "1.0.0",
+  "observed_at": "2026-08-31",
+  "track_code": "track_4e9252a85f716e38",
+  "notice": "新行业向导创建的空样本集；样本必须通过合规采集和证据复核后，才可用于模板学习。",
+  "samples": []
+}

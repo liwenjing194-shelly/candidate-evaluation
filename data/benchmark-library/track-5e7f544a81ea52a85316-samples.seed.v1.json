@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_version": "1.0.0",
+  "observed_at": "2026-09-21",
+  "track_code": "track_5e7f544a81ea52a85316",
+  "notice": "系统自动建立的独立样本空间；将优先导入本地候选线索，样本不足只提示，不阻断模板人工检查与发布。",
+  "samples": []
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_version": "1.0.0",
+  "observed_at": "2026-08-30",
+  "track_code": "agentic_commerce",
+  "notice": "首批为 Agentic Commerce 的最小样本基线，用于验证按赛道路由的样本库；不代表系统已经认定相关人物为优秀经营者。",
+  "samples": [
+    {
+      "sample_key": "cn-meituan-wang-xing-agentic-commerce-2026-08",
+      "sample_type": "benchmark",
+      "person_name": "王兴",
+      "person_role": "董事长兼首席执行官",
+      "organization_name": "美团",
+      "industry_code": "business_services",
+      "track_code": "agentic_commerce",
+      "jurisdiction": "中国大陆",
+      "organization_stage": "上市公司，拥有大规模本地生活交易网络",
+      "observation_date": "2026-08-30",
+      "status": "collecting",
+      "summary": "具有大规模本地生活交易、履约和平台生态经验的跨领域标杆候选；当前仅作为待复核样本，不自动外推为 Agentic Commerce 成功特质。",
+      "metadata": { "data_nature": "public_filing_and_public_product_material", "benchmark_approved": false, "attribution_scope": "organization_level_pending_leader_attribution" },
+      "evidence": [
+        { "field_key": "leader.current_role", "title": "负责人任职情况", "value": "公司公开披露王兴担任美团董事长兼首席执行官。", "source_code": "agent_company_filings", "source_name": "美团年度报告与公司治理披露", "source_url": "https://www.hkexnews.hk/", "source_locator": "董事及高级管理人员章节", "publisher_type": "stock_exchange_disclosure", "publication_date": "2026-04-01", "observed_at": "2026-08-30", "collection_method": "public_page", "access_basis": "上市公司依法公开披露", "quality_score": 0.96, "confidence": "high", "review_status": "pending", "collected_by": "系统种子数据" },
+        { "field_key": "organization.commerce_network", "title": "平台商业交易网络", "value": "公开披露显示公司连接消费者、商户、配送和本地生活服务，形成大规模交易与履约网络。", "source_code": "agent_company_filings", "source_name": "美团年度报告与业务披露", "source_url": "https://www.hkexnews.hk/", "source_locator": "业务概览与经营数据章节", "publisher_type": "stock_exchange_disclosure", "publication_date": "2026-04-01", "observed_at": "2026-08-30", "collection_method": "public_page", "access_basis": "上市公司依法公开披露", "quality_score": 0.94, "confidence": "medium", "review_status": "pending", "collected_by": "系统种子数据" },
+        { "field_key": "organization.fulfillment_and_unit_economics", "title": "履约和单位经济基础", "value": "公司持续披露即时配送、到店和到家等业务的交易、履约及经营效率指标。", "source_code": "agent_company_filings", "source_name": "美团年度报告与业绩公告", "source_url": "https://www.hkexnews.hk/", "source_locator": "经营数据与分部信息章节", "publisher_type": "stock_exchange_disclosure", "publication_date": "2026-04-01", "observed_at": "2026-08-30", "collection_method": "public_page", "access_basis": "上市公司依法公开披露", "quality_score": 0.93, "confidence": "medium", "review_status": "pending", "collected_by": "系统种子数据" },
+        { "field_key": "organization.ai_product_strategy", "title": "AI产品和智能体战略", "value": "公司公开发布面向本地生活服务的AI产品和智能化升级方向，具体 Agentic Commerce 归因仍需进一步核验。", "source_code": "agent_company_official_channels", "source_name": "美团官方产品与技术发布", "source_url": "local://agentic-commerce-official-channels/meituan", "source_locator": "AI产品和技术发布材料", "publisher_type": "company_official_channel", "publication_date": "2026-08-30", "observed_at": "2026-08-30", "collection_method": "manual_archive", "access_basis": "公司官方公开发布", "quality_score": 0.75, "confidence": "low", "review_status": "pending", "collected_by": "系统种子数据" }
+      ]
+    },
+    {
+      "sample_key": "us-shopify-tobias-lutke-agentic-commerce-2026-08",
+      "sample_type": "control",
+      "person_name": "Tobias Lütke",
+      "person_role": "董事会成员兼创始人",
+      "organization_name": "Shopify",
+      "industry_code": "business_services",
+      "track_code": "agentic_commerce",
+      "jurisdiction": "美国及全球",
+      "organization_stage": "上市公司，商户基础设施平台",
+      "observation_date": "2026-08-30",
+      "status": "collecting",
+      "summary": "拥有商户工具、支付和平台生态能力的普通对照候选；与智能体商业相关性较强，但需补充端到端智能体交易结果。",
+      "metadata": { "data_nature": "public_filing_and_public_product_material", "nomination_group": "control", "benchmark_approved": false, "attribution_scope": "organization_level_pending_leader_attribution" },
+      "evidence": [
+        { "field_key": "leader.current_role", "title": "负责人任职情况", "value": "Shopify公开申报材料披露Tobias Lütke为创始人并担任董事会成员。", "source_code": "agent_company_filings", "source_name": "Shopify SEC公开申报材料", "source_url": "https://www.sec.gov/edgar/search/", "source_locator": "董事和管理层信息", "publisher_type": "sec_filing", "publication_date": "2026-02-13", "observed_at": "2026-08-30", "collection_method": "public_search", "access_basis": "SEC官方公开申报", "quality_score": 0.98, "confidence": "high", "review_status": "pending", "collected_by": "系统种子数据" },
+        { "field_key": "organization.merchant_infrastructure", "title": "商户基础设施能力", "value": "公开申报和产品资料显示 Shopify 为商户提供建站、支付、订单和运营工具。", "source_code": "agent_company_filings", "source_name": "Shopify公开申报与产品披露", "source_url": "https://www.sec.gov/edgar/search/", "source_locator": "业务描述和产品章节", "publisher_type": "sec_filing", "publication_date": "2026-02-13", "observed_at": "2026-08-30", "collection_method": "public_search", "access_basis": "SEC官方公开申报", "quality_score": 0.95, "confidence": "medium", "review_status": "pending", "collected_by": "系统种子数据" },
+        { "field_key": "organization.agentic_commerce_experiment", "title": "智能体商业试验线索", "value": "官方产品材料显示公司持续探索AI辅助商户经营和购物体验，但端到端授权、支付责任和复购结果仍待补充。", "source_code": "agent_company_official_channels", "source_name": "Shopify官方产品与开发者材料", "source_url": "local://agentic-commerce-official-channels/shopify", "source_locator": "AI购物和开发者能力材料", "publisher_type": "company_official_channel", "publication_date": "2026-08-30", "observed_at": "2026-08-30", "collection_method": "manual_archive", "access_basis": "公司官方公开发布", "quality_score": 0.73, "confidence": "low", "review_status": "pending", "collected_by": "系统种子数据" }
+      ]
+    },
+    {
+      "sample_key": "internal-simulated-agentic-commerce-2026-08",
+      "sample_type": "internal_candidate",
+      "person_name": "沈知行",
+      "person_role": "Agentic Commerce团队负责人",
+      "organization_name": "智购引擎（模拟）",
+      "industry_code": "business_services",
+      "track_code": "agentic_commerce",
+      "jurisdiction": "中国大陆",
+      "organization_stage": "已有产品，准备规模化商业化",
+      "observation_date": "2026-08-30",
+      "status": "ready_for_review",
+      "summary": "系统流程验收使用的模拟候选人，仅用于验证新赛道样本路由，不进入外部标杆统计。",
+      "metadata": { "data_nature": "synthetic", "eligible_for_benchmark_weighting": false, "source_file": "候选人数据包_沈知行_Agentic Commerce负责人_模拟.md" },
+      "evidence": [
+        { "field_key": "sample.data_nature", "title": "样本数据性质", "value": "模拟候选人资料，不代表真实个人或公司。", "source_code": "agent_authorized_materials", "source_name": "本地模拟候选人数据包", "source_url": "local://候选人数据包_沈知行_Agentic Commerce负责人_模拟.md", "source_locator": "文件声明", "publisher_type": "internal_test_fixture", "publication_date": "2026-08-30", "observed_at": "2026-08-30", "collection_method": "consented_upload", "access_basis": "系统测试数据", "quality_score": 1, "confidence": "high", "review_status": "verified", "collected_by": "系统种子数据" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "methodology_version": "1.0.0",
+  "industry": { "code": "cultural_media", "name": "文化传媒" },
+  "track": { "code": "ai_short_drama", "name": "AI短剧" },
+  "purpose": "使用可核查的负责人和企业经营事实，生成行业评估规则候选；不根据知名度、媒体评价或单一样本直接认定成功特质。",
+  "success_definition": {
+    "label": "可持续、可复制并合规的AI短剧经营成果",
+    "required_principles": [
+      "经营结果必须与AI短剧或短剧业务直接相关",
+      "至少覆盖两个观察期或提供可复核的规模化连续经营证据",
+      "公司整体业绩不得直接归因于单一负责人或AI短剧业务",
+      "成功标签必须同时考虑增长、效率、现金流与合规，不以播放量或收入单指标决定",
+      "所有负责人归因必须经过人工复核"
+    ]
+  },
+  "outcome_dimensions": [
+    { "code": "content_output", "name": "内容产出与命中表现", "examples": ["上线数量", "完播或留存", "爆款率", "多期稳定性"] },
+    { "code": "unit_economics", "name": "单位经济与现金效率", "examples": ["单剧成本", "回收周期", "投放效率", "毛利与经营现金流"] },
+    { "code": "production_system", "name": "工业化生产与AI效率", "examples": ["标准流程", "制作周期", "AI覆盖环节", "质量控制与返工率"] },
+    { "code": "ip_and_compliance", "name": "IP资产与合规", "examples": ["版权链路", "备案许可", "内容安全", "数据与模型授权"] },
+    { "code": "distribution_and_commercialization", "name": "发行与商业化", "examples": ["渠道多样性", "海外本地化", "付费与广告", "客户集中度"] },
+    { "code": "organization_and_governance", "name": "组织与治理", "examples": ["关键岗位梯队", "负责人职责", "内控", "关联交易与利益冲突"] }
+  ],
+  "cohort_rules": {
+    "benchmark": {
+      "label": "标杆候选",
+      "minimum_evidence": 6,
+      "minimum_independent_source_categories": 3,
+      "minimum_observation_periods": 2,
+      "requirements": ["至少三类结果维度达到可核查的持续表现", "不存在未处理的关键合规问题", "负责人对结果的职责关系可核查"]
+    },
+    "control": {
+      "label": "普通对照",
+      "minimum_evidence": 4,
+      "minimum_independent_source_categories": 2,
+      "requirements": ["与赛道直接相关但尚未证明持续成功", "允许处于试验、转型或早期规模化阶段"]
+    },
+    "risk": {
+      "label": "风险对照",
+      "minimum_evidence": 4,
+      "minimum_independent_source_categories": 2,
+      "requirements": ["至少存在一个可核查的经营、治理或合规风险信号", "风险不得仅凭媒体评价或同名记录认定"]
+    }
+  },
+  "review_stages": [
+    { "code": "discovered", "name": "已发现", "meaning": "已定位负责人和赛道相关公开资料" },
+    { "code": "collecting", "name": "采集中", "meaning": "事实证据尚未达到分组准入要求" },
+    { "code": "ready_for_review", "name": "待复核", "meaning": "证据结构完整，等待人工核查归因" },
+    { "code": "approved", "name": "已批准", "meaning": "人工确认样本分组，可进入跨样本归因" }
+  ],
+  "template_learning_rules": [
+    "只有已批准样本可以进入跨样本归因",
+    "每个特质必须在标杆组重复出现，并与对照组或风险组形成差异",
+    "归因结果只能生成评分维度、证据要求、锚点或权重的修改建议",
+    "AI不得自动修改、发布模板或作出投资结论",
+    "人工接受建议时必须记录理由、证据范围和版本历史"
+  ],
+  "minimum_pilot_cohort": { "benchmark": 6, "control": 6, "risk": 4, "note": "用于MVP归因验证，不代表统计显著性要求。" }
+}

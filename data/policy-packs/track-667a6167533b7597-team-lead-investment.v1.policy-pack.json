@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "policy_pack_id": "track_667a6167533b7597_team_lead_investment",
+  "version": "1.0.0",
+  "name": "智慧医疗团队负责人投资评估规则包",
+  "status": "approved",
+  "default_for_mock": false,
+  "taxonomy": {
+    "industry": {
+      "code": "industry_533b759779d16280",
+      "name": "医疗科技",
+      "aliases": []
+    },
+    "track": {
+      "code": "track_667a6167533b7597",
+      "name": "智慧医疗",
+      "aliases": []
+    }
+  },
+  "definitions": {
+    "industry": "围绕医疗科技相关产品、技术、服务和经营主体的投资研究范围。",
+    "track": "以智慧医疗为核心应用或商业模式的企业与团队，不等同于泛行业概念。"
+  },
+  "applicability": {
+    "investment_purposes": [
+      "investment_screening"
+    ],
+    "candidate_roles": [
+      "团队负责人",
+      "创始人",
+      "CEO"
+    ],
+    "project_stages": [
+      "已有团队，准备规模化生产",
+      "已有产品，准备规模化商业化"
+    ],
+    "jurisdictions": [
+      "中国大陆"
+    ]
+  },
+  "template_file": "../templates/track-667a6167533b7597-team-lead-investment.v1.json",
+  "required_gate_order": [
+    "agent_identity_and_user_authorization",
+    "payment_security_and_transaction_liability",
+    "data_privacy_and_regulatory_compliance",
+    "merchant_platform_and_protocol_dependency",
+    "commercialization_path",
+    "leader_integrity_and_conflict_disclosure"
+  ],
+  "governance_rules": {
+    "weights_total": 100,
+    "score_scale": 5,
+    "two_or_more_failed_gates_block_final_decision": true,
+    "unconfirmed_gate_blocks_recommendation": true,
+    "unconfirmed_is_not_failure": true,
+    "gates_cannot_be_offset_by_score": true,
+    "ai_can_only_recommend_gate_result": true,
+    "manual_gate_change_requires_reason": true,
+    "human_final_decision_required": true
+  },
+  "review": {
+    "approved_by": "本地评审员",
+    "approved_at": "2026-08-30T12:42:47.147Z",
+    "approval_note": "确认建立本赛道初始规则、样本库和合规采集计划",
+    "source": "industry_track_setup_wizard"
+  }
+}

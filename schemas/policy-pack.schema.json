@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://candidate-evaluation.local/schemas/policy-pack.schema.json",
+  "title": "行业赛道投资评估规则包清单",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "policy_pack_id",
+    "version",
+    "name",
+    "status",
+    "default_for_mock",
+    "taxonomy",
+    "definitions",
+    "applicability",
+    "template_file",
+    "required_gate_order",
+    "governance_rules",
+    "review"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "policy_pack_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_.-]{2,99}$" },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "name": { "type": "string", "minLength": 4, "maxLength": 200 },
+    "status": { "enum": ["draft", "approved", "retired"] },
+    "default_for_mock": { "type": "boolean" },
+    "taxonomy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["industry", "track"],
+      "properties": {
+        "industry": { "$ref": "#/$defs/taxonomyTerm" },
+        "track": { "$ref": "#/$defs/taxonomyTerm" }
+      }
+    },
+    "definitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["industry", "track"],
+      "properties": {
+        "industry": { "type": "string", "minLength": 8, "maxLength": 200 },
+        "track": { "type": "string", "minLength": 8, "maxLength": 300 }
+      }
+    },
+    "applicability": { "type": "object" },
+    "template_file": { "type": "string", "minLength": 5 },
+    "required_gate_order": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 3 }
+    },
+    "governance_rules": { "type": "object" },
+    "review": {
+      "type": "object",
+      "required": ["approved_by", "approved_at", "change_summary"],
+      "properties": {
+        "approved_by": { "type": "string", "minLength": 2 },
+        "approved_at": { "type": "string", "format": "date-time" },
+        "change_summary": { "type": "string", "minLength": 4 }
+      }
+    }
+  },
+  "$defs": {
+    "taxonomyTerm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "name", "aliases"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_.-]{1,63}$" },
+        "name": { "type": "string", "minLength": 2 },
+        "aliases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

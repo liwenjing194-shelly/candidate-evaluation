@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "ai_short_drama_synthetic_golden_v1",
+  "template_id": "ai_short_drama_team_lead_investment",
+  "template_version": "1.0.0",
+  "source_dataset": "候选人评估系统_模拟候选人_seed.json",
+  "candidates": [
+    {
+      "candidate_id": "candidate_a",
+      "candidate_name": "林岑",
+      "expected_gates": [
+        {
+          "gate_id": "ip_and_copyright",
+          "expected_status": "pass",
+          "severity": "normal",
+          "veto_triggered": false,
+          "reason": "代表作品具有多类授权文件、发行合同、企业版模型协议和可追溯权利清单。"
+        },
+        {
+          "gate_id": "leader_integrity_and_verifiability",
+          "expected_status": "pass",
+          "severity": "normal",
+          "veto_triggered": false,
+          "reason": "负责人职责、股权、项目结果和经营数据具有团队、平台、合同和财务证据支持。"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "expected_status": "pass",
+          "severity": "normal",
+          "veto_triggered": false,
+          "reason": "平台、品牌和互动产品已产生可核验回款，未来计划由历史成本和转化数据支持。"
+        },
+        {
+          "gate_id": "conflict_of_interest",
+          "expected_status": "pass",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "关联供应商和小额LP关系已披露，存在比价、市场定价和独立复核措施，仍需持续抽查。"
+        }
+      ],
+      "failed_gate_count": 0,
+      "unconfirmed_gate_count": 0,
+      "expected_confidence": "high",
+      "expected_risk": "low_to_medium",
+      "scoring": {
+        "allowed": true,
+        "official_result_status": "available",
+        "overall_score_range": { "min": 80, "max": 95 },
+        "dimension_score_ranges": [
+          { "dimension_id": "content_strategy", "min": 4, "max": 5 },
+          { "dimension_id": "track_record", "min": 4, "max": 5 },
+          { "dimension_id": "ai_production_system", "min": 4, "max": 5 },
+          { "dimension_id": "scalable_delivery", "min": 4, "max": 5 },
+          { "dimension_id": "commercialization_and_unit_economics", "min": 4, "max": 5 },
+          { "dimension_id": "team_and_leadership", "min": 4, "max": 5 },
+          { "dimension_id": "capital_efficiency", "min": 3, "max": 4 }
+        ],
+        "surface_metrics_must_not_override_gates": true
+      },
+      "allowed_conclusions": ["recommend_investment", "hold", "needs_more_information", "not_recommended"],
+      "prohibited_conclusions": ["investment_suspended"],
+      "workflow_action": "continue_to_weighted_scoring_and_normal_human_review",
+      "required_reviews": ["投资评委复核", "关联交易抽查"],
+      "supplement_requests": []
+    },
+    {
+      "candidate_id": "candidate_b",
+      "candidate_name": "周砚",
+      "expected_gates": [
+        {
+          "gate_id": "ip_and_copyright",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "训练素材、风格适配器、配音、音乐和联合出品权利存在多处文件缺口。"
+        },
+        {
+          "gate_id": "leader_integrity_and_verifiability",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "主要作品存在但回款口径、外部顾问业务和部分成果归属仍缺少独立核验。"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "作品产生收入但已回款、应收和一次性制作费未拆分，未来业务缺少正式订单支持。"
+        },
+        {
+          "gate_id": "conflict_of_interest",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "关联配音供应商、负责人顾问业务和创作争议已披露但缺少独立比价和完整处理文件。"
+        }
+      ],
+      "failed_gate_count": 0,
+      "unconfirmed_gate_count": 4,
+      "expected_confidence": "medium",
+      "expected_risk": "medium",
+      "scoring": {
+        "allowed": true,
+        "official_result_status": "reference_only",
+        "overall_score_range": { "min": 57, "max": 70 },
+        "dimension_score_ranges": [
+          { "dimension_id": "content_strategy", "min": 4, "max": 4 },
+          { "dimension_id": "track_record", "min": 3, "max": 4 },
+          { "dimension_id": "ai_production_system", "min": 3, "max": 3 },
+          { "dimension_id": "scalable_delivery", "min": 3, "max": 3 },
+          { "dimension_id": "commercialization_and_unit_economics", "min": 2, "max": 3 },
+          { "dimension_id": "team_and_leadership", "min": 2, "max": 3 },
+          { "dimension_id": "capital_efficiency", "min": 2, "max": 3 }
+        ],
+        "surface_metrics_must_not_override_gates": true
+      },
+      "allowed_conclusions": ["needs_more_information", "hold"],
+      "prohibited_conclusions": ["recommend_investment", "not_recommended", "investment_suspended"],
+      "workflow_action": "generate_supplement_requests_and_hold_for_human_review",
+      "required_reviews": ["投资评委复核", "版权与权利链复核", "财务与回款核验", "关联交易复核"],
+      "supplement_requests": [
+        {
+          "gate_id": "ip_and_copyright",
+          "material": "模型、训练素材、风格适配器、配音、音乐及联合出品权利文件",
+          "owner_role": "候选负责人",
+          "verification_method": "按作品建立权利清单并由法律或合规人员抽查",
+          "status": "pending"
+        },
+        {
+          "gate_id": "leader_integrity_and_verifiability",
+          "material": "负责人项目贡献、顾问业务边界和关键经营数据的独立证明",
+          "owner_role": "投资经理",
+          "verification_method": "访谈核心成员并与合同、署名、平台及财务记录交叉核对",
+          "status": "pending"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "material": "按作品拆分的已回款、应收、制作费、分账收入和完整成本表",
+          "owner_role": "候选负责人",
+          "verification_method": "合同、平台结算、发票和银行流水勾稽",
+          "status": "pending"
+        },
+        {
+          "gate_id": "conflict_of_interest",
+          "material": "关联供应商比价、顾问服务合同及创作争议处理文件",
+          "owner_role": "投资经理",
+          "verification_method": "关联方穿透、独立比价和争议文件审阅",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "candidate_id": "candidate_c",
+      "candidate_name": "许澈",
+      "expected_gates": [
+        {
+          "gate_id": "ip_and_copyright",
+          "expected_status": "fail",
+          "severity": "veto",
+          "veto_triggered": true,
+          "reason": "核心作品存在重大署名、共同开发、第三方持权、训练数据、音乐和声音授权问题，当前无法合法控制和再授权。"
+        },
+        {
+          "gate_id": "leader_integrity_and_verifiability",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "负责人贡献、工商股权、代持、收益分配和实际控制关系存在明显矛盾，尚不足以确认欺诈。"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "expected_status": "unconfirmed",
+          "severity": "important",
+          "veto_triggered": false,
+          "reason": "历史收入较高，但未来独家授权、海外发行和衍生商业化均依赖尚未完成的权利清理。"
+        },
+        {
+          "gate_id": "conflict_of_interest",
+          "expected_status": "fail",
+          "severity": "veto",
+          "veto_triggered": true,
+          "reason": "负责人首次未披露其对核心模型供应商的经济权益，并存在多项未充分披露的关联外包和平台顾问关系。"
+        }
+      ],
+      "failed_gate_count": 2,
+      "unconfirmed_gate_count": 2,
+      "expected_confidence": "low",
+      "expected_risk": "critical",
+      "scoring": {
+        "allowed": false,
+        "official_result_status": "skipped_due_to_gates",
+        "surface_metrics_must_not_override_gates": true
+      },
+      "allowed_conclusions": ["investment_suspended"],
+      "prohibited_conclusions": ["recommend_investment", "hold", "needs_more_information", "not_recommended"],
+      "workflow_action": "block_final_investment_decision_and_force_human_legal_review",
+      "required_reviews": ["投资负责人复核", "法律与版权专项复核", "实际控制与关联交易专项核查"],
+      "supplement_requests": [
+        {
+          "gate_id": "ip_and_copyright",
+          "material": "全部核心作品的创作贡献、署名、转让、训练素材、模型、音乐和声音权利链",
+          "owner_role": "候选负责人",
+          "verification_method": "由法律人员逐作品核验权利链并处理现有书面异议",
+          "status": "pending"
+        },
+        {
+          "gate_id": "leader_integrity_and_verifiability",
+          "material": "工商股权、代持协议、收益分配、实际控制和负责人项目贡献证明",
+          "owner_role": "投资经理",
+          "verification_method": "工商、合同、资金流和核心成员访谈交叉核验",
+          "status": "pending"
+        },
+        {
+          "gate_id": "commercialization_path",
+          "material": "在权利清理基础上重新编制的可授权作品清单和商业化计划",
+          "owner_role": "候选负责人",
+          "verification_method": "核验各作品可发行、衍生和海外授权范围后重新测算",
+          "status": "pending"
+        },
+        {
+          "gate_id": "conflict_of_interest",
+          "material": "全部关联公司、供应商、外包、平台顾问关系、交易合同和资金流",
+          "owner_role": "投资经理",
+          "verification_method": "关联方穿透、交易定价复核和未披露事项专项调查",
+          "status": "pending"
+        }
+      ]
+    }
+  ]
+}

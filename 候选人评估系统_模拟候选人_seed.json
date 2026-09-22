@@ -1,0 +1,117 @@
+{
+  "dataset_name": "候选人评估系统模拟候选人案例集",
+  "synthetic": true,
+  "as_of": "2026-08-15",
+  "scenario": {
+    "industry": "生成式AI内容",
+    "track": "AI动画/短剧内容工作室",
+    "role": "创始人或项目负责人",
+    "currency": "CNY",
+    "notes": "所有人物、公司、作品和数据均为虚构，仅用于开发、演示和测试。"
+  },
+  "candidates": [
+    {
+      "id": "candidate_a",
+      "case_label": "A",
+      "name": "林岑",
+      "synthetic": true,
+      "current_role": "云栖映界工作室创始人、CEO、总制片人",
+      "biography": {
+        "age": 36,
+        "education": "数字媒体艺术本科；影视制片管理进修",
+        "experience": "10年动画、互动内容和短剧制作经验",
+        "strengths": ["内容策划", "项目管理", "平台发行", "预算控制", "团队搭建", "AI生产流程设计"]
+      },
+      "ownership_and_commitment": "持有工作室62%股权，全职投入；个人累计投入280万元",
+      "team_members": [
+        {"name":"方岚","role":"COO/商业化负责人","experience":"8年内容运营和品牌合作","ownership":"15%","notes":"负责合同、回款和客户管理"},
+        {"name":"赵澈","role":"AI技术负责人","experience":"6年视觉生成、工作流和数据治理","ownership":"10%","notes":"负责模型选择、自动化和质量评测"},
+        {"name":"陈野","role":"制片经理","experience":"5年短剧和动画项目管理","ownership":"5%","notes":"负责排期、供应商和交付"},
+        {"name":"苏禾","role":"编剧/世界观设计","experience":"7年动画编剧","ownership":"3%","notes":"核心IP共创成员"},
+        {"name":"贺宁","role":"视觉总监","experience":"9年角色设计和美术统筹","ownership":"2%","notes":"负责视觉风格一致性"},
+        {"name":"外包团队","role":"配音、音乐、后期","experience":"3家长期合作供应商","ownership":null,"notes":"均有书面服务合同"}
+      ],
+      "works": [
+        {"title":"潮汐之后","type":"AI动画短剧","scale":"12集","plays_or_starts":18400000,"gross_revenue_cny":2600000,"attributable_net_revenue_cny":2080000,"evidence_items":["平台后台","结算单","银行流水"],"rights_status":"脚本、角色、美术、配音和音乐均有书面授权"},
+        {"title":"第七码头","type":"AI微短剧","scale":"24集","plays_or_starts":32100000,"gross_revenue_cny":4800000,"attributable_net_revenue_cny":3840000,"evidence_items":["两个平台后台","发行合同","回款凭证"],"rights_status":"联合出品协议明确IP归属、区域和期限"},
+        {"title":"纸月亮","type":"AI动画短片","scale":"18分钟","plays_or_starts":7500000,"gross_revenue_cny":620000,"attributable_net_revenue_cny":490000,"evidence_items":["平台后台","品牌合作发票"],"rights_status":"音乐和字体均有商业授权"},
+        {"title":"星轨维修站","type":"互动短剧/轻互动产品","scale":"互动产品","plays_or_starts":52000,"gross_revenue_cny":1100000,"attributable_net_revenue_cny":860000,"evidence_items":["产品后台","渠道分成单"],"rights_status":"角色和程序代码权利清单完整"}
+      ],
+      "ai_production_process": ["剧本与世界观设计","分镜和镜头清单","商业授权模型生成初稿","自有/已授权素材训练风格适配器","人工视觉、对白、节奏和版权质检","按权利清单核对后发布并保留版本"],
+      "cost_and_capacity": {"fixed_monthly_cost_cny":380000,"variable_cost_per_12_episode_season_cny":220000,"full_cost_per_season_cny_range":[600000,650000],"capacity":"每5周完成1季12集；每月2部短片","cost_evidence":["工资表","软件订阅清单","供应商发票","项目成本台账"]},
+      "ip_and_licensing_materials": {"completeness":"high","provided":["4个作品的剧本、角色设定和美术资产清单","2个作品的著作权/软件著作权证明","配音、音乐、字体和后期书面授权","平台发行合同","企业版模型使用协议","素材来源和权利链表"],"to_verify":["合同签署主体","授权期限","关联交易定价"]},
+      "commercialization_plan": ["平台分账和授权","品牌定制短剧与角色植入","角色和互动产品授权","东南亚及英语市场发行","用成熟作品孵化可持续IP"],
+      "conflicts": [{"related_party":"COO方岚的配偶持有后期制作供应商40%股权","exposure":"该供应商约占后期支出的18%","disclosure":"已主动披露","mitigation":"保留三家供应商比价记录；财务独立复核"},{"related_party":"林岑是某平台内容基金小额LP","exposure":"持股低于1%","disclosure":"已披露","mitigation":"该平台不是当前主要发行方"}],
+      "expected_evaluation": {"fit":"high","confidence":"high","risk":"low_to_medium","recommended_status":"normal_human_review"},
+      "verification_questions": ["关联后期供应商报价是否持续与市场价一致？","平台续约意向是否已转为正式合同？","扩产后质量审核和权利核验是否有足够人力？"]
+    },
+    {
+      "id": "candidate_b",
+      "case_label": "B",
+      "name": "周砚",
+      "synthetic": true,
+      "current_role": "折线叙事工作室创始人、创意负责人",
+      "biography": {
+        "age": 34,
+        "education": "广告学本科",
+        "experience": "7年短剧、广告和新媒体内容经验；近2年转向生成式AI内容",
+        "strengths": ["创意策划", "内容增长", "平台运营", "快速试错", "品牌提案"]
+      },
+      "ownership_and_commitment": "持有工作室51%股权；兼职经营一个创意顾问业务",
+      "team_members": [
+        {"name":"罗可","role":"制片/项目经理","experience":"4年广告制作","ownership":"12%","notes":"兼职，按项目投入"},
+        {"name":"何默","role":"AI工作流工程师","experience":"3年图像和视频生成","ownership":"8%","notes":"主要依赖外部模型和自由职业者"},
+        {"name":"叶青","role":"编剧","experience":"5年网文和短剧编剧","ownership":"5%","notes":"3个项目为外部合作，权利文件不一致"},
+        {"name":"赵南","role":"运营","experience":"2年平台投放","ownership":"4%","notes":"负责播放增长和数据截图"},
+        {"name":"外部自由职业者","role":"配音、剪辑、音乐","experience":"不固定","ownership":null,"notes":"多数为聊天记录或简版订单"}
+      ],
+      "works": [
+        {"title":"逆光航线","type":"AI微短剧","scale":"20集","plays_or_starts":25800000,"gross_revenue_cny":3200000,"attributable_net_revenue_cny":2400000,"evidence_items":["平台后台截图","部分结算单"],"rights_status":"脚本和角色授权已签；配乐、训练素材和部分外包合同缺口"},
+        {"title":"纸上城市","type":"AI动画短剧","scale":"8集","plays_or_starts":14600000,"gross_revenue_cny":1350000,"attributable_net_revenue_cny":920000,"evidence_items":["平台后台截图","客户邮件"],"rights_status":"摄影参考素材只有转授权意向，正式文件未归档"},
+        {"title":"记忆售货机","type":"AI动画短片","scale":"15分钟","plays_or_starts":9800000,"gross_revenue_cny":480000,"attributable_net_revenue_cny":310000,"evidence_items":["播放后台","预付款记录"],"rights_status":"配音有口头约定；音乐授权范围不明确"},
+        {"title":"探险者日志","type":"AI系列短剧","scale":"30集","plays_or_starts":21200000,"gross_revenue_cny":2100000,"attributable_net_revenue_cny":1450000,"evidence_items":["平台数据","联合出品方对账单"],"rights_status":"联合出品合同未完整写明IP归属和二次开发权"}
+      ],
+      "ai_production_process": ["周砚完成选题、标题和前三集脚本","使用多个订阅模型生成镜头草稿","外部自由职业者训练部分风格适配器","配音、音乐和剪辑多数外包","上线前没有统一素材权利清单","重点复盘播放和完播率，财务归集不足"],
+      "cost_and_capacity": {"fixed_monthly_cost_cny":260000,"variable_cost_per_12_episode_season_cny":240000,"full_cost_per_season_cny_range":[450000,520000],"capacity":"每6周完成1季12集；每月1部短片","cost_evidence":["银行付款记录","部分发票","项目预算表"],"gaps":["缺少完整按项目核算","收入和回款未完全拆分"]},
+      "ip_and_licensing_materials": {"completeness":"medium_low","provided":["部分脚本和角色授权","两个平台的发行/分账协议片段","部分付款记录","自由职业者聊天记录和订单截图"],"missing":["模型、风格适配器和训练素材完整权利链","摄影素材正式转授权","配音和音乐商业授权范围","联合出品合同完整IP条款","完整回款和应收账款核对表"]},
+      "commercialization_plan": ["平台分账和信息流广告","消费品牌定制短剧","将逆光航线包装为系列IP","未来提供AI内容工作流订阅服务"],
+      "conflicts": [{"related_party":"制片罗可的兄弟持有常用配音供应商60%股权","exposure":"约占配音支出的35%","disclosure":"已提及","mitigation":"尚无第三方比价记录"},{"related_party":"周砚的创意顾问业务向工作室收取一次品牌策略服务费","exposure":"服务边界和定价需核对","disclosure":"已提供部分发票","mitigation":"需独立核对服务内容"},{"related_party":"外部编剧声称纸上城市核心设定来自其旧稿","exposure":"潜在创作争议","disclosure":"双方承认存在争议","mitigation":"目前只有聊天记录，无正式争议解决文件"}],
+      "expected_evaluation": {"fit":"medium_high","confidence":"medium","risk":"medium","recommended_status":"request_more_information_and_human_review"},
+      "verification_questions": ["收入中已回款、应收账款和一次性制作费分别是多少？","训练素材、风格适配器、配音和音乐授权能否补齐？","联合出品方是否拥有续作和海外发行权？","关联供应商报价是否经过独立比价？"]
+    },
+    {
+      "id": "candidate_c",
+      "case_label": "C",
+      "name": "许澈",
+      "synthetic": true,
+      "current_role": "极昼实验室联合创始人、总导演、项目负责人候选人",
+      "biography": {
+        "age": 38,
+        "education": "影视摄影与视觉设计本科",
+        "experience": "12年影视视觉、广告和数字内容经验；曾任大型内容公司创意总监",
+        "strengths": ["视觉创意", "生产效率", "平台增长", "资源整合", "复杂项目推进"]
+      },
+      "ownership_and_commitment": "自称持有实验室45%经济权益；工商登记和代持安排尚未完全披露",
+      "team_members": [
+        {"name":"顾遥","role":"联合创始人/制片","experience":"10年制片和融资","ownership":"登记股东35%","notes":"多名成员称其负责实际预算和合同"},
+        {"name":"俞杭","role":"技术负责人","experience":"5年开源模型和自动化工作流","ownership":"8%","notes":"开源模型许可证梳理不足"},
+        {"name":"白芷","role":"编剧/主创","experience":"6年网文和剧本创作","ownership":null,"notes":"对夜航星图部分设定提出署名异议"},
+        {"name":"贺川","role":"视觉设计","experience":"8年角色和概念设计","ownership":"3%","notes":"个人素材库来源和转让范围未完整记录"},
+        {"name":"其他成员","role":"配音、剪辑、运营","experience":"5人，项目制投入","ownership":null,"notes":"署名和贡献比例未统一"}
+      ],
+      "works": [
+        {"title":"夜航星图","type":"AI微短剧","scale":"30集","plays_or_starts":48600000,"gross_revenue_cny":6800000,"attributable_net_revenue_cny":4200000,"evidence_items":["平台后台","部分流水","账号运营记录"],"rights_status":"账号和流水清晰；编剧、导演、制片贡献争议，IP链未闭环"},
+        {"title":"白昼算法","type":"AI动画短剧","scale":"12集","plays_or_starts":36400000,"gross_revenue_cny":4700000,"attributable_net_revenue_cny":3000000,"evidence_items":["平台后台","发行方对账单"],"rights_status":"AI训练数据来源不明；音乐同步许可不完整"},
+        {"title":"海市蜃楼实验室","type":"AI实验短片系列","scale":"6集","plays_or_starts":18900000,"gross_revenue_cny":2300000,"attributable_net_revenue_cny":1500000,"evidence_items":["平台后台","客户付款记录"],"rights_status":"许澈称主创，原制片方称联合开发，权利边界未定"},
+        {"title":"纸鸢计划","type":"90秒短片合集","scale":"10支","plays_or_starts":12700000,"gross_revenue_cny":900000,"attributable_net_revenue_cny":580000,"evidence_items":["平台后台截图","广告客户邮件"],"rights_status":"项目权利由第三方工作室持有，许澈无完整书面转授权"}
+      ],
+      "ai_production_process": ["许澈提出视觉方向和样片","技术负责人组合多个图像、视频和语音模型","从网络图片、公开视频帧和旧项目整理训练/参考数据","自动化脚本批量生成镜头","少量人工精选和剪辑","缺少统一素材权利清单、贡献确认单和发布前法务闸门"],
+      "cost_and_capacity": {"fixed_monthly_cost_cny":420000,"variable_cost_per_12_episode_season_cny":180000,"full_cost_per_season_cny_range":[550000,650000],"capacity":"理论上每4周完成1季12集；依赖外部团队和临时人力","cost_evidence":["部分银行流水","供应商聊天记录"],"gaps":["缺少完整项目成本台账","部分供应商发票缺失"]},
+      "ip_and_licensing_materials": {"completeness":"low_critical_risk","provided":["平台发行数据和账号后台","部分分镜和署名截图","若干外包付款记录和合作邮件"],"missing_or_disputed":["夜航星图编剧和原制片团队贡献/署名/分成","白昼算法训练数据来源和音乐同步授权","海市蜃楼实验室联合开发与转让协议","纸鸢计划第三方权利持有方的书面转授权","语音模型、社区checkpoint和声音素材商业许可","工商股权、代持和收益分配穿透材料"]},
+      "commercialization_plan": ["平台独家授权和海外发行","角色衍生、游戏化和品牌联名","承接高效率广告和品牌定制","向其他内容公司提供工作流和模型技术服务"],
+      "conflicts": [{"related_party":"许澈通过未在首次材料中披露的关联公司持有模型服务供应商经济权益","exposure":"约占AI成本的45%","disclosure":"首次材料未披露","mitigation":"需穿透核实并重新评估交易价格"},{"related_party":"顾遥实际控制的制作公司承接多个项目外包","exposure":"合同价格和利润分配未完全披露","disclosure":"部分披露","mitigation":"需独立比价和关联交易审批"},{"related_party":"许澈向夜航星图主要发行平台提供内容顾问服务","exposure":"可能影响发行、结算或评估数据","disclosure":"需补充披露","mitigation":"设置回避和独立复核"},{"related_party":"核心创作者对白昼/夜航星图等项目署名和分成提出异议","exposure":"可能影响作品权利和未来授权","disclosure":"已出现书面异议","mitigation":"权利清理完成前暂停相关商业化结论"}],
+      "expected_evaluation": {"fit":"surface_high_but_unverified","confidence":"low_to_medium","risk":"high_critical","recommended_status":"hold_and_force_human_legal_review"},
+      "verification_questions": ["许澈在每个作品中的实际职责、可证明贡献和最终决策权是什么？","核心创作者是否拥有共同著作权、署名权或分成权？","训练数据、checkpoint、音乐和语音模型是否允许商业使用？","极昼实验室是否有权签署每个作品的发行、衍生和海外授权？","工商股权、代持、收益分配和实际控制人是否一致？","关联供应商交易是否独立比价？"]
+    }
+  ]
+}

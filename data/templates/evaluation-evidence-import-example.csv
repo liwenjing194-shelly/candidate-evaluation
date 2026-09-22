@@ -1,0 +1,4 @@
+evidence_key,label,value,observed_at,source_locator,quality_score
+gate.commercialization_path.status,商业化路径门槛,pass,2026-08-29,客户合同与回款核验表第2行,0.9
+dimension.commercialization_and_unit_economics.score,商业化与单位经济模型评分,4,2026-08-29,单位经济模型底表第5行,0.85
+supporting.contracts,收入合同账单和回款记录,已核验3份合同及对应回款,2026-08-29,尽调资料包/商业材料,0.8

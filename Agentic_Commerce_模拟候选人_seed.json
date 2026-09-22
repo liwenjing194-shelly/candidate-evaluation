@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "agentic_commerce_synthetic_seed_v1",
+  "dataset_version": "1.0.0",
+  "dataset_name": "Agentic Commerce模拟候选人案例集",
+  "template_id": "agentic_commerce_team_lead_investment",
+  "template_version": "1.0.0",
+  "synthetic": true,
+  "as_of": "2026-08-15",
+  "scenario": {
+    "industry": "商业服务",
+    "industry_code": "business_services",
+    "track": "Agentic Commerce",
+    "track_code": "agentic_commerce",
+    "track_alias": "智能体交易与企业采购",
+    "role": "创始人或项目负责人",
+    "currency": "CNY",
+    "notes": "所有人物、公司、产品、交易数据、授权文件和风险事件均为虚构，仅用于开发和测试。"
+  },
+  "candidates": [
+    {
+      "id": "agentic_commerce_candidate_a",
+      "case_label": "A",
+      "name": "沈知行",
+      "company": "澄明采购智能体",
+      "synthetic": true,
+      "current_role": "创始人、CEO、产品负责人",
+      "biography": {"experience":"9年企业软件、供应链和支付产品经验","education":"计算机科学本科；金融科技风险管理进修","strengths":["企业采购流程","支付编排","权限设计","商户拓展","数据分析","团队管理"]},
+      "ownership_and_commitment": "持有公司58%股权，全职投入；个人投入360万元",
+      "team_members": [
+        {"name":"唐婧","role":"COO/商户与客户成功","experience":"8年企业采购运营","ownership":"12%","notes":"负责商户合同、履约和退款"},
+        {"name":"魏川","role":"CTO/Agent Runtime","experience":"7年工作流、权限和分布式系统","ownership":"12%","notes":"负责工具调用、审批和审计"},
+        {"name":"赵临","role":"支付与风控负责人","experience":"9年支付、拒付和反欺诈","ownership":"8%","notes":"负责PSP、限额和异常交易"},
+        {"name":"方宜","role":"数据合规负责人","experience":"6年企业数据治理和隐私合规","ownership":"4%","notes":"负责DPA、保留和访问审计"},
+        {"name":"采购运营团队","role":"商户接入、客服、对账","experience":"7人","ownership":null,"notes":"已有轮班和升级机制"}
+      ],
+      "works": [
+        {"title":"智采助手v3","type":"企业采购Agent","scale":"48000笔订单","orders":48000,"gmv_cny":38600000,"net_revenue_cny":2900000,"payment_success_rate":0.987,"refund_rate":0.016,"chargeback_rate":0.0018,"evidence_items":["PSP结算单","ERP订单导出","银行流水","客户合同"],"authorization_status":"每个企业有采购额度、品类和审批矩阵"},
+        {"title":"商旅采购Agent","type":"差旅与费用Agent","scale":"19000笔订单","orders":19000,"gmv_cny":12400000,"net_revenue_cny":820000,"payment_success_rate":null,"refund_rate":null,"chargeback_rate":null,"evidence_items":["商户对账单","企业费用系统","收入确认表"],"authorization_status":"OAuth范围和代理权限书面确认"},
+        {"title":"跨境补货Agent","type":"B2B补货与支付编排","scale":"6800笔订单","orders":6800,"gmv_cny":9700000,"net_revenue_cny":660000,"payment_success_rate":0.969,"refund_rate":null,"chargeback_rate":null,"evidence_items":["供应商合同","PSP结算","关税和物流单据"],"authorization_status":"明确地区、额度和供应商白名单"},
+        {"title":"AgentPay SDK","type":"面向商户的支付组件","scale":"120家商户接入","orders":null,"gmv_cny":21300000,"net_revenue_cny":740000,"payment_success_rate":null,"refund_rate":null,"chargeback_rate":null,"evidence_items":["商户协议","API调用账单","PSP报表"],"authorization_status":"商户明确token、退款和争议处理权限"}
+      ],
+      "ai_agent_process":["读取采购目标、预算、白名单和审批矩阵","受限工具搜索、比价和库存检查","下单前检查金额、品类、地区、供应商和支付策略","超出阈值请求人工/企业审批","支付使用一次性token或PSP授权接口","订单、审批、支付、退款和异常写入审计事件","规则引擎与模型双重检查并进入异常队列"],
+      "cost_and_capacity":{"fixed_monthly_cost_cny":2100000,"variable_cost_per_10000_orders_cny":180000,"orders_per_day":6000,"peak_orders_per_day":10000,"human_intervention_per_1000_orders_range":[70,90],"cost_evidence":["云账单","模型调用报表","PSP费用单","工资和供应商发票"]},
+      "authorization_payment_commercial_materials":{"completeness":"high","provided":["采购授权书、额度和审批矩阵","供应商白名单与OAuth scope记录","PSP商户协议和tokenization说明","订单、支付、退款、拒付和收入对账表","商户合同与DPA","数据保留和访问审计","第三方安全评估和事件响应流程"],"to_verify":["授权签署主体","历史拒付样本","跨境数据传输路径"]},
+      "commercialization_plan":["企业SaaS订阅费","交易编排服务费","商户/供应商交易分成","AgentPay SDK授权","企业风控、审批和交易分析增值模块"],
+      "conflicts":[{"related_party":"沈知行持有支付编排服务商12%股权","exposure":"约占支付技术支出的22%","disclosure":"已披露","mitigation":"非关联采购负责人审批，保留三家报价"},{"related_party":"早期投资人是某大型商户董事","exposure":"该商户交易额占比低于5%","disclosure":"已披露","mitigation":"标记关联交易并触发复核"}],
+      "expected_evaluation":{"fit":"high","confidence":"high","risk":"low_to_medium","recommended_status":"normal_human_review"},
+      "verification_questions":["自动交易额度和升级审批是否在所有客户环境一致生效？","关联服务商价格是否持续可比？","拒付、重复扣款和退款是否都有完整闭环？"]
+    },
+    {
+      "id": "agentic_commerce_candidate_b",
+      "case_label": "B",
+      "name": "顾言",
+      "company": "流光购物智能体",
+      "synthetic": true,
+      "current_role": "创始人、CEO、增长负责人",
+      "biography": {"experience":"6年电商产品、内容推荐和消费者增长经验；近2年开发购物Agent","education":"信息管理本科","strengths":["用户增长","商品推荐","商户拓展","快速迭代","营销合作"]},
+      "ownership_and_commitment": "持有公司49%股权；部分时间仍为外部品牌提供顾问服务",
+      "team_members":[
+        {"name":"郑禾","role":"产品负责人","experience":"5年购物产品","ownership":"10%","notes":"负责用户体验和商品卡片"},
+        {"name":"许宁","role":"Agent工程师","experience":"3年LLM workflow","ownership":"8%","notes":"兼职，依赖外部API"},
+        {"name":"林勋","role":"商户运营","experience":"4年平台招商","ownership":"7%","notes":"负责商户签约和活动"},
+        {"name":"白若","role":"财务/结算","experience":"2年电商财务","ownership":"3%","notes":"结算和退款报表仍靠人工表格"},
+        {"name":"外包团队","role":"开发、客服和内容","experience":"不固定","ownership":null,"notes":"部分只有订单截图和聊天记录"}
+      ],
+      "works":[
+        {"title":"个性化导购Agent","type":"消费购物Agent","scale":"31000笔订单","orders":31000,"gmv_cny":18200000,"net_revenue_cny":1100000,"payment_success_rate":0.979,"refund_rate":0.038,"chargeback_rate":null,"evidence_items":["平台后台截图","部分PSP月报"],"authorization_status":"约70%商户有正式授权，其余为邮件确认"},
+        {"title":"小微企业采购助手","type":"SME采购Agent","scale":"9400笔订单","orders":9400,"gmv_cny":7600000,"net_revenue_cny":540000,"payment_success_rate":null,"refund_rate":null,"chargeback_rate":null,"evidence_items":["商户对账单","内部订单表"],"authorization_status":"额度和审批规则仅在部分客户中书面化"},
+        {"title":"旅行预订Agent","type":"酒店/交通组合","scale":"4200笔订单","orders":4200,"gmv_cny":3200000,"net_revenue_cny":210000,"payment_success_rate":null,"refund_rate":0.09,"chargeback_rate":null,"evidence_items":["渠道后台","银行入账记录"],"authorization_status":"部分渠道只有框架合作，具体代理权限未确认"}
+      ],
+      "ai_agent_process":["读取预算、偏好、配送地和购买目标","调用商品搜索、推荐和优惠券工具","低金额商品跳转结算，部分商户支持受限自动下单","高金额商品通过短信或App二次确认，但规则不一致","支付由合作PSP托管，旧商户仍使用跳转页","订单和退款每日批量同步","主要依靠客服抽查，缺少统一越权回放测试"],
+      "cost_and_capacity":{"fixed_monthly_cost_cny":1000000,"variable_cost_per_10000_orders_cny":150000,"orders_per_day":2000,"human_intervention_per_1000_orders":240,"cost_evidence":["银行入账","部分云账单","营销发票"],"gaps":["缺少完整项目级成本台账","收入和回款未完全拆分"]},
+      "authorization_payment_commercial_materials":{"completeness":"medium","provided":["约70%核心商户签约协议或邮件确认","PSP框架协议和部分月度结算单","用户服务条款和隐私政策初稿","平台订单、转化率和部分GMV数据"],"missing_or_unconfirmed":["剩余商户是否允许Agent下单、改价和退款","高金额二次确认是否全渠道生效","PSP子商户、token边界和拒付责任","旅行渠道退款、取消和拒付数据","主要商户DPA及跨境传输条款","GMV、分成、广告和实际回款统一口径","外包团队保密、数据访问和成果归属条款"]},
+      "commercialization_plan":["商户佣金和联盟分成","品牌广告","用户会员订阅","接入内容平台和支付钱包","向中小商户销售智能导购+客服套餐"],
+      "conflicts":[{"related_party":"顾言外部品牌顾问业务向流光推荐广告联盟供应商并收绩效费","exposure":"绩效费比例和排序影响未完成审查","disclosure":"部分披露","mitigation":"需独立审查"},{"related_party":"早期顾问持有某核心商户6%股权","exposure":"可能影响推荐排序","disclosure":"已提及","mitigation":"缺少书面回避记录"}],
+      "expected_evaluation":{"fit":"medium_high","confidence":"medium","risk":"medium","recommended_status":"request_more_information_and_human_review"},
+      "verification_questions":["完整商户授权矩阵何时补齐？","PSP子商户、token、拒付和退款责任是否有正式文件？","最近12个月按渠道拆分的订单、GMV、回款、退款和拒付数据在哪里？","主要商户DPA、跨境路径和保留期限是否确认？"]
+    },
+    {
+      "id": "agentic_commerce_candidate_c",
+      "case_label": "C",
+      "name": "罗恺",
+      "company": "边界引擎自动交易平台",
+      "synthetic": true,
+      "current_role": "联合创始人、CEO、交易Agent负责人",
+      "biography": {"experience":"11年电商平台、自动化交易和推荐系统经验","education":"软件工程本科；无独立支付合规负责人","strengths":["高并发系统","交易自动化","增长","供应链整合","快速产品化"]},
+      "ownership_and_commitment": "自称持有公司42%经济权益；登记股权和代持安排尚未完全穿透",
+      "team_members":[
+        {"name":"唐墨","role":"CTO","experience":"8年高并发和平台工程","ownership":"登记股东28%","notes":"负责核心运行时和部署"},
+        {"name":"谢遥","role":"支付工程师","experience":"4年支付接口和清结算","ownership":"5%","notes":"无独立安全授权审批权"},
+        {"name":"孟洁","role":"商户拓展","experience":"6年供应链和平台合作","ownership":"6%","notes":"负责多个大商户"},
+        {"name":"白岳","role":"数据科学家","experience":"3年推荐和用户画像","ownership":"4%","notes":"曾将交易数据用于训练样本"},
+        {"name":"外部开发团队","role":"脚本、爬虫、客服工具","experience":"8人项目制","ownership":null,"notes":"访问权限和保密文件不统一"}
+      ],
+      "works":[
+        {"title":"AutoBuy Enterprise","type":"企业自动采购Agent","scale":"58000笔订单","orders":58000,"gmv_cny":61800000,"net_revenue_cny":4800000,"payment_success_rate":null,"refund_rate":null,"chargeback_rate":0.032,"evidence_items":["平台订单库","部分PSP报表"],"authorization_status":"约7%订单超过用户设定额度；多客户共享主商户密钥"},
+        {"title":"SupplyChain Pilot","type":"供应链补货Agent","scale":"12400笔订单","orders":12400,"gmv_cny":18600000,"net_revenue_cny":1500000,"payment_success_rate":null,"refund_rate":null,"chargeback_rate":null,"evidence_items":["内部订单表","供应商邮件"],"authorization_status":"读取超出采购目的的供应商和员工数据"},
+        {"title":"Cross-border Travel Agent","type":"跨境商旅交易","scale":"8700笔订单","orders":8700,"gmv_cny":11300000,"net_revenue_cny":900000,"payment_success_rate":null,"refund_rate":0.11,"chargeback_rate":null,"evidence_items":["渠道截图","银行入账"],"authorization_status":"部分地区无正式代理授权，数据路径未备案"},
+        {"title":"Dynamic Deal Bot","type":"自动比价和抢购工具","scale":"22000次尝试","orders":22000,"gmv_cny":7200000,"net_revenue_cny":360000,"payment_success_rate":null,"refund_rate":null,"chargeback_rate":null,"evidence_items":["运营看板","日志片段"],"authorization_status":"通过共享账户和超范围API调用运行"}
+      ],
+      "ai_agent_process":["读取目标和预算后自动搜索、比价和生成购买建议","部分企业环境直接继承主账户采购和支付凭证","交易前只稳定检查总预算，未稳定检查单笔额度、品类和地区","共享账号或长期API key执行部分工具调用","根据历史交易和外部数据调整供应商排序","异常依赖人工从日志排查，缺少kill switch和不可变审计","使用含手机号、地址、员工采购记录和购买偏好的数据训练推荐模型"],
+      "cost_and_capacity":{"fixed_monthly_cost_cny":2800000,"variable_cost_per_10000_orders_cny":130000,"orders_per_day":10000,"human_intervention_per_1000_orders":46,"cost_evidence":["部分云账单","供应商付款记录"],"gaps":["缺少完整项目级成本台账","事故成本和退款损失未完整归集"]},
+      "authorization_payment_commercial_materials":{"completeness":"low_critical_risk","provided":["部分企业订单、GMV和运营看板","供应商合作邮件和部分商户合同","PSP开户资料","自动化率和增长截图"],"critical_issues":["至少14笔越权订单，合计约120万元","生产日志曾记录可复用长期API key","一个主商户密钥被多个客户环境共享","拒付、退款、重复扣款责任未在所有合同明确","交易数据被用于训练/排序但客户用途同意不完整","数据保留36个月以上且删除请求记录不完整","外部开发团队可访问生产样本","跨境和共享账户场景缺少正式代理授权","无法为所有工具调用提供完整审计链"]},
+      "commercialization_plan":["交易服务费","供应商返佣","企业订阅","大型企业采购和跨境补货","向商户销售动态定价和自动促销工具","用聚合交易数据训练推荐和价格预测模型"],
+      "conflicts":[{"related_party":"罗恺控制未在首次材料披露的数据服务公司","exposure":"接收边界引擎交易样本并收费","disclosure":"首次材料未披露","mitigation":"需穿透核实"},{"related_party":"孟洁负责拓展的大商户向罗恺个人咨询实体支付顾问费","exposure":"可能影响商户优先级和交易排序","disclosure":"部分未披露","mitigation":"需独立复核"},{"related_party":"关联支付服务商提供高权限接口","exposure":"交易价格和安全责任未独立评估","disclosure":"未完整披露","mitigation":"暂停高权限接口并重签协议"}],
+      "expected_evaluation":{"fit":"surface_high_but_unverified","confidence":"low_to_medium","risk":"high_critical","recommended_status":"hold_and_force_human_legal_security_compliance_review"},
+      "verification_questions":["逐笔复盘越权订单并完成补救","撤销共享主密钥并实施短期token、轮换和最小权限","建立额度、品类、地区和供应商多层授权及kill switch","完成个人数据盘点、删除/匿名化和用途重新确认","补齐DPA、跨境传输、保留和外部访问协议","穿透核实关联公司、代持、咨询费和返佣安排"]
+    }
+  ]
+}

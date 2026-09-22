@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "methodology_version": "1.0.0",
+  "industry": {
+    "code": "industry_65705b575a314e50",
+    "name": "数字娱乐"
+  },
+  "track": {
+    "code": "track_4e9252a85f716e38",
+    "name": "互动影游"
+  },
+  "purpose": "以可核查的负责人和企业经营事实，生成互动影游行业评估规则候选；不根据知名度、媒体评价或单一样本直接认定成功特质。",
+  "success_definition": {
+    "label": "可持续、可复制并合规的互动影游经营成果",
+    "required_principles": [
+      "经营结果必须与智能体执行真实商业任务直接相关",
+      "至少覆盖两个观察期或提供可复核的连续经营证据",
+      "公司整体业绩不得直接归因于单一负责人或单一产品",
+      "成功标签必须同时考虑用户价值、可靠性、交易风险、商业化和组织能力",
+      "负责人归因必须保留证据边界并进入人工复核"
+    ]
+  },
+  "outcome_dimensions": [
+    {
+      "code": "product_value_and_use_case",
+      "name": "用户需求与产品价值",
+      "examples": [
+        "高频任务",
+        "用户授权",
+        "重复使用",
+        "结果质量"
+      ]
+    },
+    {
+      "code": "agent_capability_and_reliability",
+      "name": "智能体能力与任务可靠性",
+      "examples": [
+        "任务成功率",
+        "异常处理",
+        "模型与工具韧性",
+        "可观测性"
+      ]
+    },
+    {
+      "code": "commerce_integration_and_interoperability",
+      "name": "商业集成与协议互操作",
+      "examples": [
+        "商户覆盖",
+        "协议适配",
+        "订单履约",
+        "对账"
+      ]
+    },
+    {
+      "code": "authorization_security_and_auditability",
+      "name": "授权、安全与可审计性",
+      "examples": [
+        "权限和限额",
+        "安全控制",
+        "审计日志",
+        "争议处理"
+      ]
+    },
+    {
+      "code": "commercialization_and_unit_economics",
+      "name": "商业化与单位经济模型",
+      "examples": [
+        "收入质量",
+        "贡献利润",
+        "回款",
+        "退款与获客成本"
+      ]
+    },
+    {
+      "code": "ecosystem_data_and_defensibility",
+      "name": "生态、数据与竞争壁垒",
+      "examples": [
+        "数据授权",
+        "商户网络",
+        "合作关系",
+        "迁移成本"
+      ]
+    },
+    {
+      "code": "team_leadership_and_scaling",
+      "name": "负责人及规模化执行能力",
+      "examples": [
+        "跨职能领导",
+        "风险治理",
+        "关键岗位",
+        "规模化计划"
+      ]
+    }
+  ],
+  "cohort_rules": {
+    "benchmark": {
+      "label": "标杆候选",
+      "minimum_evidence": 6,
+      "minimum_independent_source_categories": 3,
+      "minimum_observation_periods": 2,
+      "requirements": [
+        "至少三类结果维度达到可核查的持续表现",
+        "不存在未处理的关键交易或数据风险",
+        "负责人职责关系可核查"
+      ]
+    },
+    "control": {
+      "label": "普通对照",
+      "minimum_evidence": 4,
+      "minimum_independent_source_categories": 2,
+      "minimum_observation_periods": 1,
+      "requirements": [
+        "与智能体商业直接相关但尚未证明持续成功",
+        "允许处于试验、转型或早期商业化阶段"
+      ]
+    },
+    "risk": {
+      "label": "风险对照",
+      "minimum_evidence": 4,
+      "minimum_independent_source_categories": 2,
+      "minimum_observation_periods": 1,
+      "requirements": [
+        "至少存在一个可核查的经营、交易安全、合规或治理风险信号",
+        "风险不得仅凭媒体评价或同名记录认定"
+      ]
+    }
+  },
+  "review_stages": [
+    {
+      "code": "discovered",
+      "name": "已发现",
+      "meaning": "已定位负责人和赛道相关资料"
+    },
+    {
+      "code": "collecting",
+      "name": "采集中",
+      "meaning": "事实证据尚未达到分组准入要求"
+    },
+    {
+      "code": "ready_for_review",
+      "name": "待复核",
+      "meaning": "证据结构完整，等待人工核查归因"
+    },
+    {
+      "code": "approved",
+      "name": "已批准",
+      "meaning": "人工确认后可进入跨样本归因"
+    }
+  ],
+  "template_learning_rules": [
+    "跨样本分析只使用已复核证据，企业事实不自动归因到负责人",
+    "每个特质必须在标杆组重复出现，并与对照组或风险组形成差异",
+    "归因结果只能生成评分维度、证据要求、锚点或权重的修改建议",
+    "AI不得自动修改、发布模板或作出投资结论",
+    "系统不设置额外的样本批准层，人工复核证据和人工确认模板修改即可"
+  ],
+  "minimum_pilot_cohort": {
+    "benchmark": 6,
+    "control": 6,
+    "risk": 4,
+    "note": "用于MVP归因验证，不代表统计显著性要求。"
+  }
+}

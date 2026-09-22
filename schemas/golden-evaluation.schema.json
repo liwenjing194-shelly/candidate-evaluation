@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://candidate-evaluation.local/schemas/golden-evaluation.schema.json",
+  "title": "黄金评估预期结果",
+  "description": "用于验证候选人评估引擎是否正确执行门槛、评分和人工复核规则。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "dataset_id", "template_id", "template_version", "source_dataset", "candidates"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "dataset_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{2,79}$" },
+    "template_id": { "type": "string", "minLength": 3 },
+    "template_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "source_dataset": { "type": "string", "minLength": 3 },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/candidateExpectation" }
+    }
+  },
+  "$defs": {
+    "gateExpectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "expected_status", "severity", "veto_triggered", "reason"],
+      "properties": {
+        "gate_id": { "type": "string", "minLength": 3 },
+        "expected_status": { "enum": ["pass", "fail", "unconfirmed"] },
+        "severity": { "enum": ["normal", "important", "veto"] },
+        "veto_triggered": { "type": "boolean" },
+        "reason": { "type": "string", "minLength": 8 }
+      }
+    },
+    "scoreRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": { "type": "number", "minimum": 0 },
+        "max": { "type": "number", "minimum": 0 }
+      }
+    },
+    "dimensionRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension_id", "min", "max"],
+      "properties": {
+        "dimension_id": { "type": "string", "minLength": 3 },
+        "min": { "type": "number", "minimum": 1, "maximum": 5 },
+        "max": { "type": "number", "minimum": 1, "maximum": 5 }
+      }
+    },
+    "scoringExpectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed", "official_result_status", "surface_metrics_must_not_override_gates"],
+      "properties": {
+        "allowed": { "type": "boolean" },
+        "official_result_status": { "enum": ["available", "reference_only", "skipped_due_to_gates"] },
+        "overall_score_range": { "$ref": "#/$defs/scoreRange" },
+        "dimension_score_ranges": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/dimensionRange" }
+        },
+        "surface_metrics_must_not_override_gates": { "const": true }
+      }
+    },
+    "supplementRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "material", "owner_role", "verification_method", "status"],
+      "properties": {
+        "gate_id": { "type": "string", "minLength": 3 },
+        "material": { "type": "string", "minLength": 3 },
+        "owner_role": { "type": "string", "minLength": 2 },
+        "verification_method": { "type": "string", "minLength": 3 },
+        "status": { "const": "pending" }
+      }
+    },
+    "candidateExpectation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_id", "candidate_name", "expected_gates", "failed_gate_count",
+        "unconfirmed_gate_count", "expected_confidence", "expected_risk",
+        "scoring", "allowed_conclusions", "prohibited_conclusions",
+        "workflow_action", "required_reviews", "supplement_requests"
+      ],
+      "properties": {
+        "candidate_id": { "type": "string", "minLength": 3 },
+        "candidate_name": { "type": "string", "minLength": 2 },
+        "expected_gates": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 10,
+          "items": { "$ref": "#/$defs/gateExpectation" }
+        },
+        "failed_gate_count": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "unconfirmed_gate_count": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "expected_confidence": { "enum": ["high", "medium", "low"] },
+        "expected_risk": { "enum": ["low", "low_to_medium", "medium", "high", "critical"] },
+        "scoring": { "$ref": "#/$defs/scoringExpectation" },
+        "allowed_conclusions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["recommend_investment", "hold", "needs_more_information", "not_recommended", "investment_suspended"] }
+        },
+        "prohibited_conclusions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["recommend_investment", "hold", "needs_more_information", "not_recommended", "investment_suspended"] }
+        },
+        "workflow_action": { "type": "string", "minLength": 3 },
+        "required_reviews": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "supplement_requests": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/supplementRequest" }
+        }
+      }
+    }
+  }
+}

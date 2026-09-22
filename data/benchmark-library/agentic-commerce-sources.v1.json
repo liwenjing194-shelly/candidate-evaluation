@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_version": "1.0.0",
+  "industry": { "code": "business_services", "name": "商业服务" },
+  "track": { "code": "agentic_commerce", "name": "Agentic Commerce" },
+  "governance": {
+    "purpose": "仅用于 Agentic Commerce 投资研究、样本归因和候选人评估辅助，不用于自动作出投资或个人权益决定。",
+    "principles": [
+      "仅采集与智能体执行、交易安全、商业化、生态接入和负责人治理直接相关的信息",
+      "事实、负责人归因假设和模板规则分层保存",
+      "每条事实必须保留来源、链接、观察日期、采集方式和复核状态",
+      "不得绕过登录、验证码、付费墙、robots限制、反爬措施或平台权限",
+      "企业自述不得单独形成高置信度成功特质",
+      "模板规则和权重只能由人工确认发布"
+    ],
+    "excluded_fields": [
+      "身份证件号码",
+      "精确住址",
+      "私人联系方式",
+      "家庭成员隐私",
+      "健康与生物识别信息",
+      "与经营评估无关的性别、年龄、婚姻、民族、宗教等信息"
+    ]
+  },
+  "sources": [
+    {
+      "code": "agent_company_filings",
+      "name": "上市公司公告与定期报告",
+      "category": "company_filing",
+      "source_type": "official_public",
+      "url": "https://www.cninfo.com.cn/",
+      "allowed_domains": ["cninfo.com.cn", "hkexnews.hk", "sec.gov"],
+      "allowed_methods": ["public_page", "public_search", "manual_download"],
+      "automation_mode": "respect_site_terms_and_rate_limits",
+      "scope": ["负责人任职", "AI产品与商业化", "研发投入", "客户和收入", "风险因素"],
+      "requirements": ["保留公告编号、报告期、页码和原始链接"],
+      "prohibitions": ["不得绕过访问控制或高频抓取"],
+      "quality_baseline": 0.95
+    },
+    {
+      "code": "agent_company_official_channels",
+      "name": "企业官网、产品文档和官方发布",
+      "category": "company_first_party_public",
+      "source_type": "public_first_party",
+      "url": "local://agentic-commerce-official-channels",
+      "allowed_domains": ["meituan.com", "shopify.com"],
+      "allowed_methods": ["public_page", "manual_archive"],
+      "automation_mode": "public_pages_subject_to_terms",
+      "scope": ["产品能力", "商户接入", "协议合作", "安全架构", "负责人公开演讲"],
+      "requirements": ["标记为企业自述，并尽量寻找独立来源交叉验证"],
+      "prohibitions": ["不得把营销表述直接转换为高置信度特质"],
+      "quality_baseline": 0.72
+    },
+    {
+      "code": "agent_authorized_materials",
+      "name": "候选人或企业授权提供的一手材料",
+      "category": "first_party_due_diligence",
+      "source_type": "authorized_private",
+      "url": "local://agentic-commerce-authorized-materials",
+      "allowed_methods": ["consented_upload", "data_room", "interview_record"],
+      "automation_mode": "user_uploaded_only",
+      "scope": ["合同", "订单与回款", "任务日志", "安全测试", "数据地图", "团队职责"],
+      "requirements": ["记录授权人、用途、保留期限和访问权限"],
+      "prohibitions": ["不得超范围使用或对外披露"],
+      "quality_baseline": 0.85
+    },
+    {
+      "code": "agent_protocol_and_payment_partners",
+      "name": "协议、支付和平台合作方公开资料",
+      "category": "ecosystem_public",
+      "source_type": "public_third_party",
+      "url": "local://agentic-commerce-ecosystem-citations",
+      "allowed_methods": ["public_page", "manual_citation"],
+      "automation_mode": "metadata_and_short_extract_only",
+      "scope": ["协议兼容", "支付合作", "商户接入", "生态依赖", "合作方确认"],
+      "requirements": ["保留发布方、发布日期、链接和引用定位"],
+      "prohibitions": ["不得依据单篇报道形成定论"],
+      "quality_baseline": 0.68
+    },
+    {
+      "code": "licensed_commercial_data",
+      "name": "依法购买或获授权的商业数据库",
+      "category": "licensed_third_party",
+      "source_type": "licensed_commercial",
+      "url": "local://licensed-connectors",
+      "allowed_methods": ["licensed_api", "licensed_export"],
+      "automation_mode": "license_required",
+      "scope": ["企业关系", "融资", "客户和市场", "交易与应用数据"],
+      "requirements": ["保存供应商、合同授权范围、数据日期和再利用限制"],
+      "prohibitions": ["不得共享或存储超出许可范围的数据"],
+      "quality_baseline": 0.8
+    }
+  ]
+}

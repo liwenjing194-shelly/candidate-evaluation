@@ -1,0 +1,9 @@
+node_modules/
+dist/
+data/runtime/
+deployment/
+.playwright-mcp/
+*.log
+.env
+.env.*
+!.env.example
